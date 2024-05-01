@@ -1,16 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://dv6uhiv3g16p2"]
 
-[ext_resource type="PackedScene" uid="uid://ljhh5nell6si" path="res://Levels/platform.blend" id="1_7ksl0"]
 [ext_resource type="PackedScene" uid="uid://bedvwnonm6gq8" path="res://Scenes/Player.tscn" id="2_4u5tn"]
+[ext_resource type="PackedScene" uid="uid://dno0bec52q11x" path="res://Levels/Test Level.blend" id="2_rutj5"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("2_4u5tn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.61107, 3, 0.403955)
-SPEED = 5
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.67468, 0)
 
-[node name="platform" parent="." instance=ExtResource("1_7ksl0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.61107, 0, 0.403955)
+[node name="Test Level" parent="." instance=ExtResource("2_rutj5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.478106, 0, -1.20728)
 
-[node name="platform2" parent="." instance=ExtResource("1_7ksl0")]
-transform = Transform3D(1, 0, 0, 0, -2.18557e-08, 0.5, 0, -0.5, -2.18557e-08, 1.12804, 9.53674e-07, 9.04305)
+[node name="Test Level2" parent="." instance=ExtResource("2_rutj5")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -0.5, 0, 1, -2.18557e-08, 0.478106, 0, 7.54148)
+
+[editable path="Test Level"]
+[editable path="Test Level2"]
