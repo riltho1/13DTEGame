@@ -1,18 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://dv6uhiv3g16p2"]
+[gd_scene load_steps=5 format=3 uid="uid://dv6uhiv3g16p2"]
 
 [ext_resource type="PackedScene" uid="uid://bedvwnonm6gq8" path="res://Scenes/Player.tscn" id="2_4u5tn"]
 [ext_resource type="PackedScene" uid="uid://dno0bec52q11x" path="res://Levels/Test Level.blend" id="2_rutj5"]
+[ext_resource type="PackedScene" uid="uid://cptq8q2kbt1tj" path="res://Scenes/Enemy.tscn" id="3_33tqx"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_0223b"]
+vertices = PackedVector3Array(-21.814, -1.57071, -23.4993, -21.814, -1.57071, 6.25066, 22.686, -1.57071, 6.25066, 22.686, -1.57071, -23.4993, -21.814, 9.17929, 7.25066, -21.814, 9.17929, 8.00066, 22.686, 9.17929, 8.00066, 22.686, 9.17929, 7.25066, -21.814, -1.57071, 9.00066, -21.814, -1.57071, 21.0007, 22.686, -1.57071, 21.0007, 22.686, -1.57071, 9.00066)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(7, 6, 4), PackedInt32Array(4, 6, 5), PackedInt32Array(11, 10, 8), PackedInt32Array(8, 10, 9)]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("2_4u5tn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.67468, 0)
 
-[node name="Test Level" parent="." instance=ExtResource("2_rutj5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.478106, 0, -1.20728)
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.67468, 0)
+navigation_mesh = SubResource("NavigationMesh_0223b")
 
-[node name="Test Level2" parent="." instance=ExtResource("2_rutj5")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -0.5, 0, 1, -2.18557e-08, 0.478106, 0, 7.54148)
+[node name="Test Level" parent="NavigationRegion3D" instance=ExtResource("2_rutj5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.478106, -2.67468, -1.20728)
 
-[editable path="Test Level"]
-[editable path="Test Level2"]
+[node name="Test Level2" parent="NavigationRegion3D" instance=ExtResource("2_rutj5")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -0.5, 0, 1, -2.18557e-08, 0.478106, -2.67468, 7.54148)
+
+[node name="Enemy" parent="NavigationRegion3D" instance=ExtResource("3_33tqx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19.2178)
+
+[editable path="NavigationRegion3D/Test Level"]
+[editable path="NavigationRegion3D/Test Level2"]

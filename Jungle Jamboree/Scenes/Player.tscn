@@ -31,7 +31,6 @@ shape = SubResource("SeparationRayShape3D_11180")
 spring_length = 5.84
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 current = true
 fov = 75.1411
 
