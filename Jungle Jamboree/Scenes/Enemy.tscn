@@ -9,9 +9,8 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qoqne"]
 albedo_color = Color(1, 0, 0, 1)
 
-[node name="Enemy" type="CharacterBody3D"]
+[node name="Enemy" type="CharacterBody3D" groups=["Enemy"]]
 script = ExtResource("1_7xyt7")
-player_path = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_1ow41")
