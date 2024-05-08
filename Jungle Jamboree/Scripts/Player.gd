@@ -1,6 +1,5 @@
 extends CharacterBody3D
 
-
 @export var SPEED = 5
 @export var JUMP_VELOCITY = 4.5
 @export var DOUBLE_JUMP_VELOCITY = 3.0
@@ -11,20 +10,19 @@ extends CharacterBody3D
 
 var DOUBLE_JUMP : bool = false
 
+signal collected(collectable)
 #var camera_rotation:Vector3
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-
-	
+#Movement Code, copied from previous game
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
-	
-# Handle jump.
+#Jump and Double Jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		if DOUBLE_JUMP == false:
@@ -50,6 +48,9 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+func collect(collectable):
+	collected.emit(collectable)
 
 func _input(event):
 	if event is InputEventMouseMotion:

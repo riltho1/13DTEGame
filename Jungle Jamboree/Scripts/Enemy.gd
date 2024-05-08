@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @onready var nav_agent = $NavigationAgent3D
-var SPEED = 4.0
+var SPEED = 6.0
 var gravity_force = 9.8
 
 func _process(delta):
