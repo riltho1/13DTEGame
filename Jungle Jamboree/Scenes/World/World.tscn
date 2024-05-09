@@ -10,6 +10,7 @@ vertices = PackedVector3Array(-21.814, -1.57071, -23.4993, -21.814, -1.57071, 6.
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(7, 6, 4), PackedInt32Array(4, 6, 5), PackedInt32Array(11, 10, 8), PackedInt32Array(8, 10, 9)]
 
 [node name="World" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.16204, 0)
 script = ExtResource("1_lu0av")
 
 [node name="Player" parent="." instance=ExtResource("2_4u5tn")]

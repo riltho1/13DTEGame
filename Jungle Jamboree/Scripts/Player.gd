@@ -1,17 +1,18 @@
 extends CharacterBody3D
 
-@export var SPEED = 5
+var SPEED = 5
 @export var JUMP_VELOCITY = 4.5
 @export var DOUBLE_JUMP_VELOCITY = 3.0
 @export var sensivity = 1000
 @export var friction = 600
+@export var RUN_SPEED = 10
+@export var WALK_SPEED = 5
+
 
 @onready var camera = $SpringArm3D/Camera3D
 
 var DOUBLE_JUMP : bool = false
 
-signal collected(collectable)
-#var camera_rotation:Vector3
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -21,18 +22,26 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-
+	
+	#Sprinting
+	if Input.is_action_pressed("sprint") and is_on_floor():
+		SPEED = RUN_SPEED
+	else:
+		SPEED = WALK_SPEED
+	
 #Jump and Double Jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		if DOUBLE_JUMP == false:
 			DOUBLE_JUMP = true
 			velocity.y = JUMP_VELOCITY
+		
 	
 	if Input.is_action_just_pressed("jump") and not is_on_floor():
 		if DOUBLE_JUMP == true:
 			DOUBLE_JUMP = false
 			velocity.y = DOUBLE_JUMP_VELOCITY
+	
 	
 
 
@@ -49,8 +58,7 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-func collect(collectable):
-	collected.emit(collectable)
+
 
 func _input(event):
 	if event is InputEventMouseMotion:
