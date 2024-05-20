@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Jungle Jamboree"
+run/main_scene="res://Models/water_4.obj"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
 [autoload]
