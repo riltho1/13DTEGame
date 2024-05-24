@@ -20,6 +20,9 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 #Movement Code, copied from previous game
 func _physics_process(delta):
 	# Add the gravity.
+	if is_on_floor():
+		DOUBLE_JUMP = true
+	
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	
@@ -29,22 +32,12 @@ func _physics_process(delta):
 	else:
 		SPEED = WALK_SPEED
 	
-#Jump and Double Jump
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	#Jump and Double Jump
+	if Input.is_action_just_pressed("jump") and (is_on_floor() or DOUBLE_JUMP == true):
 		velocity.y = JUMP_VELOCITY
-		if DOUBLE_JUMP == false:
-			DOUBLE_JUMP = true
-			velocity.y = JUMP_VELOCITY
-		
-	
-	if Input.is_action_just_pressed("jump") and not is_on_floor():
-		if DOUBLE_JUMP == true:
+		if not is_on_floor():
 			DOUBLE_JUMP = false
-			velocity.y = DOUBLE_JUMP_VELOCITY
 	
-	
-
-
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector( "left", "right","up","down")
