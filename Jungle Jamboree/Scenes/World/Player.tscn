@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bedvwnonm6gq8"]
+[gd_scene load_steps=8 format=3 uid="uid://bedvwnonm6gq8"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_kp6p3"]
 
@@ -12,6 +12,8 @@
 albedo_color = Color(0, 0, 0.878431, 0.882353)
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_11180"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xm53f"]
 
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_kp6p3")
@@ -36,3 +38,12 @@ fov = 75.1411
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(0.999995, 0.00142794, -0.00287657, 0, 0.895712, 0.444635, 0.00321149, -0.444633, 0.895707, -0.0144568, 2.48546, 3.45425)
+
+[node name="HitBox" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
+shape = SubResource("CapsuleShape3D_xm53f")
+
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]

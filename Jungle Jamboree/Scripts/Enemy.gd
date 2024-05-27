@@ -20,3 +20,4 @@ func _process(delta):
 
 func update_target_location(target_location):
 	nav_agent.target_position = target_location
+

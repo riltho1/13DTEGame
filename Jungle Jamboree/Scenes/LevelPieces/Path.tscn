@@ -12,9 +12,12 @@ data = PackedVector3Array(-0.6812, 0, -0.619, -0.5526, 0.02, -0.6193, -0.8106, 0
 [node name="trail_dirt_straight_2" instance=ExtResource("1_iwfuu")]
 
 [node name="TrailDirt2_Cylinder_018" parent="." index="0"]
+layers = 3
 material_override = SubResource("StandardMaterial3D_g2giq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="TrailDirt2_Cylinder_018" index="0"]
+collision_layer = 3
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TrailDirt2_Cylinder_018/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_nuchw")

@@ -51,8 +51,14 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-
+func die():
+	get_tree().reload_current_scene()
 
 func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_object_local(Vector3.UP, event.relative.x * 0.0005)
+
+
+func _on_hit_box_body_entered(body):
+	if body.is_in_group("Enemy"):
+		print("ouch") # Replace with function body.
