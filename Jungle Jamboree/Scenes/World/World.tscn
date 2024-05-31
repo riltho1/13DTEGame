@@ -6,8 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://cptq8q2kbt1tj" path="res://Scenes/World/Enemy.tscn" id="3_33tqx"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_0223b"]
-vertices = PackedVector3Array(-21.814, -1.57071, -23.4993, -21.814, -1.57071, 6.25066, 22.686, -1.57071, 6.25066, 22.686, -1.57071, -23.4993, -21.814, 9.17929, 7.25066, -21.814, 9.17929, 8.00066, 22.686, 9.17929, 8.00066, 22.686, 9.17929, 7.25066, -21.814, -1.57071, 9.00066, -21.814, -1.57071, 21.0007, 22.686, -1.57071, 21.0007, 22.686, -1.57071, 9.00066)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(7, 6, 4), PackedInt32Array(4, 6, 5), PackedInt32Array(11, 10, 8), PackedInt32Array(8, 10, 9)]
 
 [node name="World" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.16204, 0)

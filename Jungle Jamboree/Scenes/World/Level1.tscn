@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://crubyayd5kug"]
+[gd_scene load_steps=13 format=3 uid="uid://crubyayd5kug"]
 
 [ext_resource type="PackedScene" uid="uid://cjhhgr5lygos" path="res://Scenes/LevelPieces/Path.tscn" id="1_vfwc1"]
 [ext_resource type="PackedScene" uid="uid://ofie44xd11l8" path="res://Scenes/LevelPieces/Path1.tscn" id="2_rjm43"]
@@ -24,16 +24,26 @@ sky = SubResource("Sky_vu6qp")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_nag2f"]
+geometry_parsed_geometry_type = 1
+
 [node name="Node3D" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("3_vcpkr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.67468, 0)
+
+[node name="Enemy" parent="." instance=ExtResource("8_ypa16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.233479, 1.26846, -46.6491)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_6gg5q")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(7.2, 0, 0, 0, 3, 0, 0, 0, 3, 0, -29.307, -60.591)
+navigation_mesh = SubResource("NavigationMesh_nag2f")
+
+[node name="bridge_1" parent="NavigationRegion3D" instance=ExtResource("7_gkcvd")]
+transform = Transform3D(-1.82131e-08, 0, 0.416667, 0, 1, 0, -1, 0, -4.37113e-08, 0, 9.75536, 0.00146675)
 
 [node name="trail_dirt_straight_3" parent="NavigationRegion3D" instance=ExtResource("1_vfwc1")]
 transform = Transform3D(0.694444, 0, 0, 0, 1.66667, 0, 0, 0, 1.66667, 0.0035776, 9.769, 13.5313)
@@ -44,26 +54,8 @@ transform = Transform3D(0.694444, 0, 0, 0, 1.66667, 0, 0, 0, 1.66667, 0.00178881
 [node name="trail_dirt_straight_1" parent="NavigationRegion3D" instance=ExtResource("2_rjm43")]
 transform = Transform3D(0.694444, 0, 0, 0, 1.66667, 0, 0, 0, 1.66667, 0, 9.769, 16.8637)
 
-[node name="ground_dirt_9" parent="NavigationRegion3D" instance=ExtResource("4_2b7jn")]
-transform = Transform3D(0.1875, 0, 0, 0, -1.16564e-08, -1.33333, 0, 0.266667, -5.8282e-08, 0.0212794, 4.31943, 2.12693)
-
-[node name="ground_dirt_8" parent="NavigationRegion3D" instance=ExtResource("4_2b7jn")]
-transform = Transform3D(0.138889, 0, 0, 0, -1.45705e-08, -0.333333, 0, 0.333333, -1.45705e-08, 0, 11.1023, 22.197)
-
 [node name="trail_dirt_straight_4" parent="NavigationRegion3D" instance=ExtResource("1_vfwc1")]
 transform = Transform3D(0.694444, 0, 0, 0, 1.66667, 0, 0, 0, 1.66667, 0, 9.769, 10.197)
-
-[node name="ground_grass_4" parent="NavigationRegion3D" instance=ExtResource("5_yhyu8")]
-transform = Transform3D(0.416667, 0, 0, 0, 1, 0, 0, 0, 1.66667, -1.25, 9.769, 18.5303)
-
-[node name="ground_grass_5" parent="NavigationRegion3D" instance=ExtResource("5_yhyu8")]
-transform = Transform3D(0.416667, 0, 0, 0, 1, 0, 0, 0, 1.66667, 1.25, 9.769, 18.5303)
-
-[node name="ground_grass_6" parent="NavigationRegion3D" instance=ExtResource("5_yhyu8")]
-transform = Transform3D(0.416667, 0, 0, 0, 1, 0, 0, 0, 1.66667, 1.25, 9.769, 11.8637)
-
-[node name="ground_grass_7" parent="NavigationRegion3D" instance=ExtResource("5_yhyu8")]
-transform = Transform3D(0.416667, 0, 0, 0, 1, 0, 0, 0, 1.66667, -1.25, 9.769, 11.8637)
 
 [node name="trail_dirt_straight_5" parent="NavigationRegion3D" instance=ExtResource("1_vfwc1")]
 transform = Transform3D(0.694444, 0, 0, 0, 1.66667, 0, 0, 0, 1.66667, 0.0035776, 9.769, 6.86463)
@@ -71,46 +63,62 @@ transform = Transform3D(0.694444, 0, 0, 0, 1.66667, 0, 0, 0, 1.66667, 0.0035776,
 [node name="trail_dirt_straight_6" parent="NavigationRegion3D" instance=ExtResource("1_vfwc1")]
 transform = Transform3D(0.694444, 0, 0, 0, 1.66667, -0.000610867, 0, 0.000610867, 1.66667, 0, 9.769, 3.53033)
 
-[node name="ground_grass_8" parent="NavigationRegion3D" instance=ExtResource("5_yhyu8")]
-transform = Transform3D(0.416667, 0, 0, 0, 1, 0, 0, 0, 1.66667, 1.25, 9.769, 5.197)
-
-[node name="ground_grass_9" parent="NavigationRegion3D" instance=ExtResource("5_yhyu8")]
-transform = Transform3D(0.416667, 0, 0, 0, 1, 0, 0, 0, 1.66667, -1.25, 9.769, 5.197)
-
-[node name="bridge_1" parent="NavigationRegion3D" instance=ExtResource("7_gkcvd")]
-transform = Transform3D(-1.82131e-08, 0, 0.416667, 0, 1, 0, -1, 0, -4.37113e-08, 0, 9.75536, 0.00146675)
-
-[node name="ground_grass_10" parent="NavigationRegion3D" instance=ExtResource("5_yhyu8")]
-transform = Transform3D(0.416667, 0, 0, 0, 1, 0, 0, 0, 1.66667, 1.25, 9.769, 5.197)
-
-[node name="ground_dirt_10" parent="NavigationRegion3D" instance=ExtResource("4_2b7jn")]
-transform = Transform3D(0.166667, 0, 0, 0, -1.16564e-08, -1.33333, 0, 0.266667, -5.8282e-08, -1.40628, 4.3247, 2.12693)
-
-[node name="ground_dirt_11" parent="NavigationRegion3D" instance=ExtResource("4_2b7jn")]
-transform = Transform3D(0.166667, 0, 0, 0, -1.16564e-08, -1.33333, 0, 0.266667, -5.8282e-08, 1.41243, 4.3247, 2.12693)
-
-[node name="water_4" parent="NavigationRegion3D" instance=ExtResource("8_6cmq7")]
-
 [node name="trail_dirt_straight_7" parent="NavigationRegion3D" instance=ExtResource("2_rjm43")]
 transform = Transform3D(0.694444, 0, 0, 0, 1.66667, 0, 0, 0, 1.66667, 0, 9.769, -3.5836)
-
-[node name="ground_grass_11" parent="NavigationRegion3D" instance=ExtResource("5_yhyu8")]
-transform = Transform3D(0.416667, 0, 0, 0, 1, 0, 0, 0, 1.66667, 1.25, 9.769, -5.25027)
-
-[node name="ground_grass_12" parent="NavigationRegion3D" instance=ExtResource("5_yhyu8")]
-transform = Transform3D(0.416667, 0, 0, 0, 1, 0, 0, 0, 1.66667, -1.25, 9.769, -5.25027)
 
 [node name="trail_dirt_straight_8" parent="NavigationRegion3D" instance=ExtResource("1_vfwc1")]
 transform = Transform3D(0.694444, 0, 0, 0, 1.66667, -0.000610867, 0, 0.000610867, 1.66667, 0, 9.769, -6.91693)
 
-[node name="ground_dirt_12" parent="NavigationRegion3D" instance=ExtResource("4_2b7jn")]
-transform = Transform3D(0.1875, 0, 0, 0, -1.16564e-08, -1.33333, 0, 0.266667, -5.8282e-08, 0.0212794, 4.31943, -2.01)
+[node name="Foreground" type="Node3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 5.00001, -9, 0, -24.9999)
 
-[node name="ground_dirt_13" parent="NavigationRegion3D" instance=ExtResource("4_2b7jn")]
-transform = Transform3D(0.166667, 0, 0, 0, -1.16564e-08, -1.33333, 0, 0.266667, -5.8282e-08, -1.40628, 4.3247, -2.01)
+[node name="ground_dirt_9" parent="Foreground" instance=ExtResource("4_2b7jn")]
+transform = Transform3D(0.45, 0, 0, 0, -1.16564e-08, -1.33333, 0, 0.16, -3.49691e-08, 3.05107, -5.44957, -5.84205)
 
-[node name="ground_dirt_14" parent="NavigationRegion3D" instance=ExtResource("4_2b7jn")]
-transform = Transform3D(0.166667, 0, 0, 0, -1.16564e-08, -1.33333, 0, 0.266667, -5.8282e-08, 1.41243, 4.3247, -2.01)
+[node name="ground_dirt_8" parent="Foreground" instance=ExtResource("4_2b7jn")]
+transform = Transform3D(0.333333, 0, 0, 0, -1.45705e-08, -0.333333, 0, 0.199999, -8.74228e-09, 3, 1.3333, 6.19997)
 
-[node name="Enemy" parent="." instance=ExtResource("8_ypa16")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.233479, 1.26846, -46.6491)
+[node name="ground_dirt_10" parent="Foreground" instance=ExtResource("4_2b7jn")]
+transform = Transform3D(0.4, 0, 0, 0, -1.16564e-08, -1.33333, 0, 0.16, -3.49691e-08, -0.375072, -5.4443, -5.84205)
+
+[node name="ground_dirt_11" parent="Foreground" instance=ExtResource("4_2b7jn")]
+transform = Transform3D(0.4, 0, 0, 0, -1.16564e-08, -1.33333, 0, 0.16, -3.49691e-08, 6.38983, -5.4443, -5.84205)
+
+[node name="water_4" parent="Foreground" instance=ExtResource("8_6cmq7")]
+transform = Transform3D(2.4, 0, 0, 0, 1, 0, 0, 0, 0.599999, 3, -9.769, -7.11821)
+
+[node name="ground_dirt_12" parent="Foreground" instance=ExtResource("4_2b7jn")]
+transform = Transform3D(0.45, 0, 0, 0, -1.16564e-08, -1.33333, 0, 0.16, -3.49691e-08, 3.05107, -5.44957, -8.3242)
+
+[node name="ground_dirt_13" parent="Foreground" instance=ExtResource("4_2b7jn")]
+transform = Transform3D(0.4, 0, 0, 0, -1.16564e-08, -1.33333, 0, 0.16, -3.49691e-08, -0.375072, -5.4443, -8.3242)
+
+[node name="ground_dirt_14" parent="Foreground" instance=ExtResource("4_2b7jn")]
+transform = Transform3D(0.4, 0, 0, 0, -1.16564e-08, -1.33333, 0, 0.16, -3.49691e-08, 6.38983, -5.4443, -8.3242)
+
+[node name="ground_grass_4" parent="Foreground" instance=ExtResource("5_yhyu8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.99995)
+
+[node name="ground_grass_5" parent="Foreground" instance=ExtResource("5_yhyu8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 3.99995)
+
+[node name="ground_grass_6" parent="Foreground" instance=ExtResource("5_yhyu8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="ground_grass_7" parent="Foreground" instance=ExtResource("5_yhyu8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="ground_grass_8" parent="Foreground" instance=ExtResource("5_yhyu8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -4.00001)
+
+[node name="ground_grass_9" parent="Foreground" instance=ExtResource("5_yhyu8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.00001)
+
+[node name="ground_grass_10" parent="Foreground" instance=ExtResource("5_yhyu8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -4.00001)
+
+[node name="ground_grass_11" parent="Foreground" instance=ExtResource("5_yhyu8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -10.2684)
+
+[node name="ground_grass_12" parent="Foreground" instance=ExtResource("5_yhyu8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.2684)
