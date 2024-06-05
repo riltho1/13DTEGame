@@ -1,5 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://crubyayd5kug"]
 
+[ext_resource type="Script" path="res://Scenes/World/Level1.gd" id="1_n5km4"]
 [ext_resource type="PackedScene" uid="uid://cjhhgr5lygos" path="res://Scenes/LevelPieces/Path.tscn" id="1_vfwc1"]
 [ext_resource type="PackedScene" uid="uid://ofie44xd11l8" path="res://Scenes/LevelPieces/Path1.tscn" id="2_rjm43"]
 [ext_resource type="PackedScene" uid="uid://bedvwnonm6gq8" path="res://Scenes/World/Player.tscn" id="3_vcpkr"]
@@ -7,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://bmtfl31tew2lj" path="res://Scenes/LevelPieces/bigGrass.tscn" id="5_yhyu8"]
 [ext_resource type="PackedScene" uid="uid://jnp87k2tyyf1" path="res://Scenes/LevelPieces/Bridge.tscn" id="7_gkcvd"]
 [ext_resource type="PackedScene" uid="uid://bwqkoqjn5odfc" path="res://Scenes/LevelPieces/Water.tscn" id="8_6cmq7"]
-[ext_resource type="PackedScene" uid="uid://cptq8q2kbt1tj" path="res://Scenes/World/Enemy.tscn" id="8_ypa16"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7idx4"]
 sky_top_color = Color(0.528908, 0.599708, 0.698296, 1)
@@ -28,12 +28,10 @@ glow_enabled = true
 geometry_parsed_geometry_type = 1
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_n5km4")
 
 [node name="Player" parent="." instance=ExtResource("3_vcpkr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.67468, 0)
-
-[node name="Enemy" parent="." instance=ExtResource("8_ypa16")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.233479, 1.26846, -46.6491)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_6gg5q")
