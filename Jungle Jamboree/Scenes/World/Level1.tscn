@@ -24,8 +24,9 @@ sky = SubResource("Sky_vu6qp")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="NavigationMesh" id="NavigationMesh_nag2f"]
-geometry_parsed_geometry_type = 1
+[sub_resource type="NavigationMesh" id="NavigationMesh_jeemf"]
+vertices = PackedVector3Array(-0.360172, 10.1245, -3.6771, -0.110172, 10.3745, -3.1771, 0.389828, 10.1245, -3.6771, 0.389828, 10.1245, -8.1771, -0.360172, 10.1245, -8.1771, -0.360172, 10.3745, 3.3229, -0.360172, 10.1245, 22.0729, 0.389828, 10.1245, 22.0729, 0.389828, 10.3745, 3.0729)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Array(2, 4, 3), PackedInt32Array(6, 5, 7), PackedInt32Array(7, 5, 8)]
 
 [node name="Node3D" type="Node3D"]
 
@@ -37,7 +38,7 @@ environment = SubResource("Environment_6gg5q")
 
 [node name="Path" type="NavigationRegion3D" parent="."]
 transform = Transform3D(7.2, 0, 0, 0, 3, 0, 0, 0, 3, 0, -29.307, -60.591)
-navigation_mesh = SubResource("NavigationMesh_nag2f")
+navigation_mesh = SubResource("NavigationMesh_jeemf")
 
 [node name="bridge_1" parent="Path" instance=ExtResource("7_gkcvd")]
 transform = Transform3D(-1.82131e-08, 0, 0.416667, 0, 1, 0, -1, 0, -4.37113e-08, 0, 9.75536, 0.00146675)
@@ -65,6 +66,15 @@ transform = Transform3D(0.694444, 0, 0, 0, 1.66667, 0, 0, 0, 1.66667, 0, 9.769, 
 
 [node name="trail_dirt_straight_8" parent="Path" instance=ExtResource("1_vfwc1")]
 transform = Transform3D(0.694444, 0, 0, 0, 1.66667, -0.000610867, 0, 0.000610867, 1.66667, 0, 9.769, -6.91693)
+
+[node name="ground_grass_12" parent="Path" instance=ExtResource("5_yhyu8")]
+transform = Transform3D(0.416667, 0, 0, 0, 1, 0, 0, 0, 5, 0.0182569, 9.64967, 12.4197)
+
+[node name="ground_grass_11" parent="Path" instance=ExtResource("5_yhyu8")]
+transform = Transform3D(0.416667, 0, 0, 0, 1, 0, 0, 0, 1.66667, 0.00701322, 9.3745, -5.17213)
+
+[node name="Enemy" parent="." instance=ExtResource("9_jxg12")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.501264, 1.59862, -26.9768)
 
 [node name="Foreground" type="Node3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 5.00001, -9, 0, -24.9999)
@@ -118,6 +128,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -10.2684)
 
 [node name="ground_grass_12" parent="Foreground" instance=ExtResource("5_yhyu8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.2684)
-
-[node name="Enemy" parent="." instance=ExtResource("9_jxg12")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.00455499, 1.4804, -50.09)
