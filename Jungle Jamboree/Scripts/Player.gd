@@ -1,62 +1,117 @@
+# ----------------------------------------------------------------------------------- #
+# -------------- FEEL FREE TO USE IN ANY PROJECT, COMMERCIAL OR NON-COMMERCIAL ------ #
+# ---------------------- 3D PLATFORMER CONTROLLER BY SD STUDIOS --------------------- #
+# ---------------------------- ATTRIBUTION NOT REQUIRED ----------------------------- #
+# ----------------------------------------------------------------------------------- #
+
 extends CharacterBody3D
 
-var SPEED = 5
-@export var JUMP_VELOCITY = 4.5
-@export var DOUBLE_JUMP_VELOCITY = 3.0
-@export var sensivity = 1000
-@export var friction = 600
-@export var RUN_SPEED = 10
-@export var WALK_SPEED = 5
+# ---------- VARIABLES ---------- #
 
+@export_category("Player Properties")
+@export var move_speed : float = 6
+@export var jump_force : float = 5
+@export var follow_lerp_factor : float = 4
+@export var jump_limit : int = 2
 
-@onready var camera = $SpringArm3D/Camera3D
+@export_group("Game Juice")
+@export var jumpStretchSize := Vector3(0.8, 1.2, 0.8)
 
-var DOUBLE_JUMP : bool = false
+# Booleans
+var is_grounded = false
+var can_double_jump = false
 
+# Onready Variables
+@onready var model = $gobot
+@onready var animation = $gobot/AnimationPlayer
+@onready var spring_arm = %Gimbal
+
+@onready var particle_trail = $ParticleTrail
+@onready var footsteps = $Footsteps
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * 2
 
-#Movement Code, copied from previous game
-func _physics_process(delta):
-	# Add the gravity.
-	if is_on_floor():
-		DOUBLE_JUMP = true
+# ---------- FUNCTIONS ---------- #
+
+func _process(delta):
+	player_animations()
+	get_input(delta)
 	
-	if not is_on_floor():
-		velocity.y -= gravity * delta
+	# Smoothly follow player's position
+	spring_arm.position = lerp(spring_arm.position, position, delta * follow_lerp_factor)
 	
-	#Sprinting
-	if Input.is_action_pressed("sprint") and is_on_floor():
-		SPEED = RUN_SPEED
-	else:
-		SPEED = WALK_SPEED
+	# Player Rotation
+	if is_moving():
+		var look_direction = Vector2(velocity.z, velocity.x)
+		model.rotation.y = lerp_angle(model.rotation.y, look_direction.angle(), delta * 12)
 	
-	#Jump and Double Jump
-	if Input.is_action_just_pressed("jump") and (is_on_floor() or DOUBLE_JUMP == true):
-		velocity.y = JUMP_VELOCITY
-		if not is_on_floor():
-			DOUBLE_JUMP = false
+	# Check if player is grounded or not
+	is_grounded = true if is_on_floor() else false
 	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector( "left", "right","up","down")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+	# Handle Jumping
+	if is_grounded:
+		can_double_jump = true
+	
+	if Input.is_action_just_pressed("jump"):
+		if is_on_floor():
+			perform_jump()
+		elif can_double_jump:
+			if is_moving():
+				perform_flip_jump()
+	
+	velocity.y -= gravity * delta
+
+func perform_jump():
+	AudioManager.jump_sfx.play()
+	AudioManager.jump_sfx.pitch_scale = 1.12
+	
+	jumpTween()
+	animation.play("Jump")
+	velocity.y = jump_force
+
+func perform_flip_jump():
+	AudioManager.jump_sfx.play()
+	AudioManager.jump_sfx.pitch_scale = 0.8
+	animation.play("Flip", -1, 2)
+	velocity.y = jump_force
+	await animation.animation_finished
+	can_double_jump = false
+	animation.play("Jump", 0.5)
+
+func is_moving():
+	return abs(velocity.z) > 0 || abs(velocity.x) > 0
+
+func jumpTween():
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "scale", jumpStretchSize, 0.1)
+	tween.tween_property(self, "scale", Vector3(1,1,1), 0.1)
+
+# Get Player Input
+func get_input(_delta):
+	var move_direction := Vector3.ZERO
+	move_direction.x = Input.get_axis("move_left", "move_right")
+	move_direction.z = Input.get_axis("move_forward", "move_back")
+	
+	# Move The player Towards Spring Arm/Camera Rotation
+	move_direction = move_direction.rotated(Vector3.UP, spring_arm.rotation.y).normalized()
+	velocity = Vector3(move_direction.x * move_speed, velocity.y, move_direction.z * move_speed)
 
 	move_and_slide()
 
-func die():
-	get_tree().reload_current_scene()
+# Handle Player Animations
+func player_animations():
+	particle_trail.emitting = false
+	footsteps.stream_paused = true
+	
+	if is_on_floor():
+		if is_moving(): # Checks if player is moving
+			animation.play("Run", 0.5)
+			particle_trail.emitting = true
+			footsteps.stream_paused = false
+		else:
+			animation.play("Idle", 0.5)
 
-func _input(event):
-	if event is InputEventMouseMotion:
-		rotate_object_local(Vector3.UP, event.relative.x * 0.0005)
 
 
 func _on_hit_box_body_entered(body):
