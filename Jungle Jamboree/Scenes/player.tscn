@@ -2052,6 +2052,8 @@ radius = 0.410443
 height = 1.36586
 
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_t0xh4")
 jump_force = 14.0
 
@@ -2255,7 +2257,7 @@ transform = Transform3D(1, 0, 0, 0, 0.739866, 0.672754, 0, -0.672754, 0.739866, 
 script = ExtResource("5_pxu3x")
 
 [node name="Camera3D" type="Camera3D" parent="Gimbal"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.798524, 4.41543)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.561654, 5.65223)
 current = true
 
 [node name="ParticleTrail" type="CPUParticles3D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://crubyayd5kug"]
+[gd_scene load_steps=16 format=3 uid="uid://crubyayd5kug"]
 
 [ext_resource type="PackedScene" uid="uid://cjhhgr5lygos" path="res://Scenes/LevelPieces/Path.tscn" id="1_vfwc1"]
 [ext_resource type="PackedScene" uid="uid://ofie44xd11l8" path="res://Scenes/LevelPieces/Path1.tscn" id="2_rjm43"]
@@ -27,6 +27,14 @@ glow_enabled = true
 [sub_resource type="NavigationMesh" id="NavigationMesh_jeemf"]
 vertices = PackedVector3Array(-0.360172, 10.1245, -3.6771, -0.110172, 10.3745, -3.1771, 0.389828, 10.1245, -3.6771, 0.389828, 10.1245, -8.1771, -0.360172, 10.1245, -8.1771, -0.360172, 10.3745, 3.3229, -0.360172, 10.1245, 22.0729, 0.389828, 10.1245, 22.0729, 0.389828, 10.3745, 3.0729)
 polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Array(2, 4, 3), PackedInt32Array(6, 5, 7), PackedInt32Array(7, 5, 8)]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rw488"]
+size = Vector3(61.1005, 11.7216, 0.661377)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ogpeu"]
+size = Vector3(10.4524, 13.2751, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_64vvm"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -79,9 +87,6 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 5.00001, -9, 0, -24.9999)
 [node name="ground_dirt_9" parent="Foreground" instance=ExtResource("4_2b7jn")]
 transform = Transform3D(0.45, 0, 0, 0, -1.16564e-08, -1.33333, 0, 0.16, -3.49691e-08, 3.05107, -5.44957, -5.84205)
 
-[node name="ground_dirt_8" parent="Foreground" instance=ExtResource("4_2b7jn")]
-transform = Transform3D(0.333333, 0, 0, 0, -1.45705e-08, -0.333333, 0, 0.199999, -8.74228e-09, 3, 1.3333, 6.19997)
-
 [node name="ground_dirt_10" parent="Foreground" instance=ExtResource("4_2b7jn")]
 transform = Transform3D(0.4, 0, 0, 0, -1.16564e-08, -1.33333, 0, 0.16, -3.49691e-08, -0.375072, -5.4443, -5.84205)
 
@@ -127,5 +132,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -10.2684)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.2684)
 
 [node name="Player" parent="." instance=ExtResource("8_2ho58")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4042, 0, 2.29957)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4042, 0, -0.834299)
 jump_force = 8.0
+
+[node name="InvisibleWalls" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="InvisibleWalls"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.64596, 5.61507, -24.5367)
+shape = SubResource("BoxShape3D_rw488")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.49184, 5.32225, -24.3463)
+shape = SubResource("BoxShape3D_rw488")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.105347, 4.45763, 5.75767)
+shape = SubResource("BoxShape3D_ogpeu")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="InvisibleWalls/StaticBody3D"]
+visible = false
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="InvisibleWalls/StaticBody3D"]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="InvisibleWalls/StaticBody3D"]
+transform = Transform3D(10, 0, 0, 0, 15, 0, 0, 0, 1, 0, 3.78135, 5.75767)
+visible = false
+mesh = SubResource("BoxMesh_64vvm")
