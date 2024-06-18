@@ -112,8 +112,6 @@ func player_animations():
 		else:
 			animation.play("Idle", 0.5)
 
-
-
 func _on_hit_box_body_entered(body):
 	if body.is_in_group("Enemy"):
 		get_tree().reload_current_scene()

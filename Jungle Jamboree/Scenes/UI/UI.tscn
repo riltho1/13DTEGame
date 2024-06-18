@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://ljii1ynitxcv"]
 
 [ext_resource type="Script" path="res://Scenes/UI/UI.gd" id="1_5t51d"]
-[ext_resource type="Texture2D" uid="uid://crq4or44cdbu0" path="res://2D Sprite/Tanuki Icon.png" id="2_77rqm"]
-[ext_resource type="Texture2D" uid="uid://tbt3x8nirs6j" path="res://2D Sprite/gold-coin.256x256.png" id="3_gltvn"]
+[ext_resource type="Texture2D" path="res://2D Sprites/Tanuki Icon.png" id="2_77rqm"]
+[ext_resource type="Texture2D" path="res://2D Sprites/gold-coin.256x256.png" id="3_gltvn"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_5t51d")

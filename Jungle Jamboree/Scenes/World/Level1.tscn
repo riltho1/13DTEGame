@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://csnkvlxwahub0" path="res://Scenes/LevelPieces/bigDirt.tscn" id="4_2b7jn"]
 [ext_resource type="PackedScene" uid="uid://bmtfl31tew2lj" path="res://Scenes/LevelPieces/bigGrass.tscn" id="5_yhyu8"]
 [ext_resource type="PackedScene" uid="uid://jnp87k2tyyf1" path="res://Scenes/LevelPieces/Bridge.tscn" id="7_gkcvd"]
-[ext_resource type="PackedScene" uid="uid://cswvebpdwj03v" path="res://Scenes/player.tscn" id="8_2ho58"]
+[ext_resource type="PackedScene" uid="uid://cswvebpdwj03v" path="res://Scenes/World/player.tscn" id="8_2ho58"]
 [ext_resource type="PackedScene" uid="uid://bwqkoqjn5odfc" path="res://Scenes/LevelPieces/Water.tscn" id="8_6cmq7"]
 [ext_resource type="PackedScene" uid="uid://cptq8q2kbt1tj" path="res://Scenes/World/Enemy.tscn" id="9_jxg12"]
 
@@ -25,7 +25,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_jeemf"]
-vertices = PackedVector3Array(-0.360172, 10.1245, -3.6771, -0.110172, 10.3745, -3.1771, 0.389828, 10.1245, -3.6771, 0.389828, 10.1245, -8.1771, -0.360172, 10.1245, -8.1771, -0.360172, 10.3745, 3.3229, -0.360172, 10.1245, 22.0729, 0.389828, 10.1245, 22.0729, 0.389828, 10.3745, 3.0729)
+vertices = PackedVector3Array(-0.360173, 10.1245, -3.67711, -0.110173, 10.3745, -3.17711, 0.389827, 10.1245, -3.67711, 0.389827, 10.1245, -8.17711, -0.360173, 10.1245, -8.17711, -0.360173, 10.3745, 3.32289, -0.360173, 10.1245, 22.0729, 0.389827, 10.1245, 22.0729, 0.389827, 10.3745, 3.07289)
 polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Array(2, 4, 3), PackedInt32Array(6, 5, 7), PackedInt32Array(7, 5, 8)]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rw488"]
@@ -79,7 +79,7 @@ transform = Transform3D(0.416667, 0, 0, 0, 1, 0, 0, 0, 5, 0.0182569, 9.64967, 12
 transform = Transform3D(0.416667, 0, 0, 0, 1, 0, 0, 0, 1.66667, 0.00701322, 9.3745, -5.17213)
 
 [node name="Enemy" parent="." instance=ExtResource("9_jxg12")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.501264, 1.08815, -26.9768)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.20946, -22.8427)
 
 [node name="Foreground" type="Node3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 5.00001, -9, 0, -24.9999)
