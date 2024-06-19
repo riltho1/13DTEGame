@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 var player_chase = false
-@export var speed = 8
+@export var speed = 5
 @onready var player: Node3D = get_tree().get_first_node_in_group("Player")
 @onready var vision_area: Area3D = $Area3D
 

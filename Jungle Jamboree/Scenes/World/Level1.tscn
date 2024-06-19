@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://crubyayd5kug"]
+[gd_scene load_steps=18 format=3 uid="uid://crubyayd5kug"]
 
 [ext_resource type="PackedScene" uid="uid://cjhhgr5lygos" path="res://Scenes/LevelPieces/Path.tscn" id="1_vfwc1"]
 [ext_resource type="PackedScene" uid="uid://ofie44xd11l8" path="res://Scenes/LevelPieces/Path1.tscn" id="2_rjm43"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cswvebpdwj03v" path="res://Scenes/World/player.tscn" id="8_2ho58"]
 [ext_resource type="PackedScene" uid="uid://bwqkoqjn5odfc" path="res://Scenes/LevelPieces/Water.tscn" id="8_6cmq7"]
 [ext_resource type="PackedScene" uid="uid://cptq8q2kbt1tj" path="res://Scenes/World/Enemy.tscn" id="9_jxg12"]
+[ext_resource type="PackedScene" uid="uid://cfes2f8jcupm2" path="res://Scenes/LevelPieces/Dirt end.tscn" id="9_lgnq3"]
+[ext_resource type="PackedScene" uid="uid://cf166txy0mhiy" path="res://Scenes/LevelPieces/Log.tscn" id="10_524ot"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7idx4"]
 sky_top_color = Color(0.528908, 0.599708, 0.698296, 1)
@@ -76,7 +78,7 @@ transform = Transform3D(0.694444, 0, 0, 0, 1.66667, -0.000610867, 0, 0.000610867
 transform = Transform3D(0.416667, 0, 0, 0, 1, 0, 0, 0, 5, 0.0182569, 9.64967, 12.4197)
 
 [node name="ground_grass_11" parent="Path" instance=ExtResource("5_yhyu8")]
-transform = Transform3D(0.416667, 0, 0, 0, 1, 0, 0, 0, 1.66667, 0.00701322, 9.3745, -5.17213)
+transform = Transform3D(0.416667, 0, 0, 0, 1, 0, 0, 0, 1.66667, 0.00701322, 9.53669, -5.17213)
 
 [node name="Enemy" parent="." instance=ExtResource("9_jxg12")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.20946, -22.8427)
@@ -163,3 +165,30 @@ visible = false
 transform = Transform3D(10, 0, 0, 0, 15, 0, 0, 0, 1, 0, 3.78135, 5.75767)
 visible = false
 mesh = SubResource("BoxMesh_64vvm")
+
+[node name="trail_dirt_end_2" parent="." instance=ExtResource("9_lgnq3")]
+transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, -0.0210605, 0, -86.3392)
+
+[node name="rotating_log" parent="." instance=ExtResource("10_524ot")]
+transform = Transform3D(0.786752, 0, 0.617269, 0, 1, 0, -0.617269, 0, 0.786752, 35.0374, -0.0438194, -91.3368)
+
+[node name="rotating_log2" parent="." instance=ExtResource("10_524ot")]
+transform = Transform3D(-0.750826, 0, 0.6605, 0, 1, 0, -0.6605, 0, -0.750826, 13.2959, -0.0438194, -91.3368)
+
+[node name="rotating_log3" parent="." instance=ExtResource("10_524ot")]
+transform = Transform3D(0.786752, 0, 0.617269, 0, 1, 0, -0.617269, 0, 0.786752, 6.98134, -0.0438194, -37.3569)
+
+[node name="rotating_log4" parent="." instance=ExtResource("10_524ot")]
+transform = Transform3D(-3.4398e-08, -0.786935, 0.617036, 1, -4.37114e-08, 0, 2.69715e-08, 0.617036, 0.786935, 6.39994, -0.0438194, -32.4218)
+
+[node name="rotating_log5" parent="." instance=ExtResource("10_524ot")]
+transform = Transform3D(-0.813344, 0, 0.581782, 0, 1, 0, -0.581782, 0, -0.813344, -6.52646, -0.0438194, -18.7761)
+
+[node name="rotating_log6" parent="." instance=ExtResource("10_524ot")]
+transform = Transform3D(-7.10609e-09, -0.162568, 0.986697, 1, -4.37114e-08, 0, 4.31299e-08, 0.986697, 0.162568, -7.10785, -0.0438194, -13.841)
+
+[node name="ground_dirt_8" parent="." instance=ExtResource("4_2b7jn")]
+transform = Transform3D(3.75, 0, 0, 0, 3, 0, 0, 0, 3.5, 0.0299082, 0, -100.44)
+
+[node name="ground_dirt_9" parent="." instance=ExtResource("4_2b7jn")]
+transform = Transform3D(3.7, 0, 0, 0, 3, 0, 0, 0, 3.5, 29.782, 0, -100.389)

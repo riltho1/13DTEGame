@@ -10,7 +10,7 @@
 albedo_color = Color(1, 0, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vca4j"]
-size = Vector3(6.84223, 1.17145, 15.1984)
+size = Vector3(10.7001, 1.17145, 12.5542)
 
 [node name="Enemy" type="CharacterBody3D" groups=["Enemy"]]
 collision_layer = 2
@@ -32,7 +32,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="EnemyVision" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00573432, 0.0857239, -3.41764)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.08567)
 shape = SubResource("BoxShape3D_vca4j")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
