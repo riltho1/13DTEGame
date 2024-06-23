@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://crubyayd5kug"]
+[gd_scene load_steps=26 format=3 uid="uid://crubyayd5kug"]
 
 [ext_resource type="PackedScene" uid="uid://cjhhgr5lygos" path="res://Scenes/LevelPieces/Path.tscn" id="1_vfwc1"]
 [ext_resource type="PackedScene" uid="uid://ofie44xd11l8" path="res://Scenes/LevelPieces/Path1.tscn" id="2_rjm43"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cptq8q2kbt1tj" path="res://Scenes/World/Enemy.tscn" id="9_jxg12"]
 [ext_resource type="PackedScene" uid="uid://cfes2f8jcupm2" path="res://Scenes/LevelPieces/Dirt end.tscn" id="9_lgnq3"]
 [ext_resource type="PackedScene" uid="uid://cf166txy0mhiy" path="res://Scenes/LevelPieces/Log.tscn" id="10_524ot"]
+[ext_resource type="PackedScene" uid="uid://bae4lx7lmt1mw" path="res://Scenes/LevelPieces/Rock1.tscn" id="11_x0x7a"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7idx4"]
 sky_top_color = Color(0.528908, 0.599708, 0.698296, 1)
@@ -37,10 +38,28 @@ size = Vector3(61.1005, 11.7216, 0.661377)
 size = Vector3(10.4524, 13.2751, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h3bv4"]
-size = Vector3(1, 11.725, 28.2684)
+size = Vector3(1, 11.725, 26.7499)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dnxj4"]
 size = Vector3(39.8832, 12.4054, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y8e75"]
+size = Vector3(1, 10.8202, 21.3503)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kekhd"]
+size = Vector3(19.8845, 11.2914, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yw4cj"]
+size = Vector3(37.3325, 10.7796, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ah77a"]
+size = Vector3(29.8916, 12.1341, 9.922)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wfupo"]
+size = Vector3(1, 10.5381, 14.9811)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pcx75"]
+size = Vector3(60.402, 10.5688, 12.4429)
 
 [node name="Node3D" type="Node3D"]
 
@@ -129,7 +148,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.00001)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -4.00001)
 
 [node name="Player" parent="." instance=ExtResource("8_2ho58")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4042, 0, -0.834299)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.1564, 0, -119.616)
 jump_force = 8.0
 
 [node name="InvisibleWalls" type="Node3D" parent="."]
@@ -155,7 +174,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.48479, 5.36249, -78.2685)
 shape = SubResource("BoxShape3D_h3bv4")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.09079, 5.36249, -78.2685)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.09079, 5.36249, -77.5093)
 shape = SubResource("BoxShape3D_h3bv4")
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
@@ -166,9 +185,29 @@ shape = SubResource("BoxShape3D_dnxj4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.3142, 5.86543, -98.2609)
 shape = SubResource("BoxShape3D_h3bv4")
 
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.6648, 4.9101, -101.377)
+shape = SubResource("BoxShape3D_y8e75")
+
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.765455, 5.86543, -113.793)
-shape = SubResource("BoxShape3D_h3bv4")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.694, 5.14569, -90.4773)
+shape = SubResource("BoxShape3D_kekhd")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.40073, 4.8898, -112.464)
+shape = SubResource("BoxShape3D_yw4cj")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.1703, 5.56703, -106.704)
+shape = SubResource("BoxShape3D_ah77a")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9855, 4.76907, -119.877)
+shape = SubResource("BoxShape3D_wfupo")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.8416, 4.78442, -133.181)
+shape = SubResource("BoxShape3D_pcx75")
 
 [node name="trail_dirt_end_2" parent="." instance=ExtResource("9_lgnq3")]
 transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, -0.0210605, 0, -86.3392)
@@ -198,10 +237,10 @@ transform = Transform3D(3.5, 0, 0, 0, 2.8, 0, 0, 0, 2.8, 1.81537, 0.0424547, -10
 transform = Transform3D(4, 0, 0, 0, 2.8, 0, 0, 0, 2.8, 28.6071, 0, -101.556)
 
 [node name="ground_dirt_10" parent="." instance=ExtResource("4_2b7jn")]
-transform = Transform3D(3.8, 0, 0, 0, 2.8, 0, 0, 0, 2.8, 29.3604, 0, -123.836)
+transform = Transform3D(3.8, 0, 0, 0, 2.8, 0, 0, 0, 2, 29.3604, 0, -120.089)
 
 [node name="ground_grass_12" parent="." instance=ExtResource("5_yhyu8")]
-transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, 0.275864, 0.0864859, -122.923)
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, 0.275864, -0.11163, -116.164)
 
 [node name="ground_grass_13" parent="." instance=ExtResource("5_yhyu8")]
 transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 7, 29.762, -0.202233, -81.1692)
@@ -210,7 +249,7 @@ transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 7, 29.762, -0.202233, -81.1692
 transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 6, 0.197984, -0.0470066, -79.012)
 
 [node name="ground_dirt_11" parent="." instance=ExtResource("4_2b7jn")]
-transform = Transform3D(3.7, 0, 0, 0, 2.8, 0, 0, 0, 2.8, 59.2189, 0, -123.709)
+transform = Transform3D(3.7, 0, 0, 0, 2.8, 0, 0, 0, 2, 59.2189, 0, -119.989)
 
 [node name="ground_grass_15" parent="." instance=ExtResource("5_yhyu8")]
 transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 7, 59.2292, -0.312767, -81.2583)
@@ -225,4 +264,34 @@ transform = Transform3D(-0.980911, 0, 0.194457, 0, 1, 0, -0.194457, 0, -0.980911
 transform = Transform3D(-5.68248e-07, 0, -13, 0, 5, 0, 13, 0, -5.68248e-07, -9.33712, 0, -101.228)
 
 [node name="ground_grass_17" parent="." instance=ExtResource("5_yhyu8")]
-transform = Transform3D(6, 0, 0, 0, 3, 0, 0, 0, 16.8, -20.6064, -0.210273, -101.139)
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, -29.3162, -0.05898, -116.127)
+
+[node name="ground_grass_18" parent="." instance=ExtResource("5_yhyu8")]
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, -29.3162, -0.05898, -100.576)
+
+[node name="ground_grass_19" parent="." instance=ExtResource("5_yhyu8")]
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, -29.3162, -0.05898, -78.1177)
+
+[node name="rock_4" parent="." instance=ExtResource("11_x0x7a")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 79.9762, -1.62176, -120.826)
+
+[node name="rock_6" parent="." instance=ExtResource("11_x0x7a")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 90.5062, -1.62176, -120.826)
+
+[node name="rock_7" parent="." instance=ExtResource("11_x0x7a")]
+transform = Transform3D(6.5533, 0, -4.5885, 0, 8, 0, 4.5885, 0, 6.5533, 103.605, -1.62176, -108.835)
+
+[node name="rock_8" parent="." instance=ExtResource("11_x0x7a")]
+transform = Transform3D(6.5533, 0, -4.5885, 0, 8, 0, 4.5885, 0, 6.5533, 98.4045, -1.62176, -116.117)
+
+[node name="rock_9" parent="." instance=ExtResource("11_x0x7a")]
+transform = Transform3D(7.96624, 0, 0.734237, 0, 8, 0, -0.734237, 0, 7.96624, 108.573, -1.62176, -101.049)
+
+[node name="rock_10" parent="." instance=ExtResource("11_x0x7a")]
+transform = Transform3D(5.82726, 0, 5.48116, 0, 8, 0, -5.48116, 0, 5.82726, 114.374, -1.62176, -93.5375)
+
+[node name="rock_11" parent="." instance=ExtResource("11_x0x7a")]
+transform = Transform3D(-5.76199, 0, 5.54973, 0, 8, 0, -5.54973, 0, -5.76199, 120.117, -1.62176, -86.5473)
+
+[node name="rock_12" parent="." instance=ExtResource("11_x0x7a")]
+transform = Transform3D(-5.47973, 0, -5.82859, 0, 8, 0, 5.82859, 0, -5.47973, 127.576, -1.62176, -82.187)
