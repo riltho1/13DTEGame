@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://crubyayd5kug"]
+[gd_scene load_steps=29 format=3 uid="uid://crubyayd5kug"]
 
 [ext_resource type="PackedScene" uid="uid://cjhhgr5lygos" path="res://Scenes/LevelPieces/Path.tscn" id="1_vfwc1"]
 [ext_resource type="PackedScene" uid="uid://ofie44xd11l8" path="res://Scenes/LevelPieces/Path1.tscn" id="2_rjm43"]
@@ -38,28 +38,37 @@ size = Vector3(61.1005, 11.7216, 0.661377)
 size = Vector3(10.4524, 13.2751, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h3bv4"]
-size = Vector3(1, 11.725, 26.7499)
+size = Vector3(10.1952, 11.725, 21.2396)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dnxj4"]
-size = Vector3(39.8832, 12.4054, 1)
+size = Vector3(9.83418, 12.4054, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y8e75"]
-size = Vector3(1, 10.8202, 21.3503)
+size = Vector3(1, 10.8202, 10.2043)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kekhd"]
-size = Vector3(19.8845, 11.2914, 1)
+size = Vector3(9.90447, 11.2914, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yw4cj"]
-size = Vector3(37.3325, 10.7796, 1)
+size = Vector3(25.6862, 10.7796, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ah77a"]
-size = Vector3(29.8916, 12.1341, 9.922)
+size = Vector3(37.8989, 12.1341, 9.922)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wfupo"]
-size = Vector3(1, 10.5381, 14.9811)
+size = Vector3(1, 13.9899, 30.8228)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pcx75"]
 size = Vector3(60.402, 10.5688, 12.4429)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sxxf3"]
+size = Vector3(29.9998, 12.4269, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pwlae"]
+size = Vector3(23.3041, 14.2991, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hbss8"]
+size = Vector3(1, 14.2612, 5.08069)
 
 [node name="Node3D" type="Node3D"]
 
@@ -148,7 +157,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.00001)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -4.00001)
 
 [node name="Player" parent="." instance=ExtResource("8_2ho58")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.1564, 0, -119.616)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.8265, 0, -128.38)
 jump_force = 8.0
 
 [node name="InvisibleWalls" type="Node3D" parent="."]
@@ -158,56 +167,72 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.64596, 5.61507, -24.5367)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.64596, 5.61507, -24.396)
 shape = SubResource("BoxShape3D_rw488")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.49184, 5.32225, -24.3463)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.49184, 5.32225, -24.2056)
 shape = SubResource("BoxShape3D_rw488")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.105347, 4.45763, 5.75767)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.105347, 4.45763, 5.89837)
 shape = SubResource("BoxShape3D_ogpeu")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.48479, 5.36249, -78.2685)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0824, 5.36249, -77.696)
 shape = SubResource("BoxShape3D_h3bv4")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.09079, 5.36249, -77.5093)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.09079, 5.36249, -77.3686)
 shape = SubResource("BoxShape3D_h3bv4")
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.817, 5.7027, -89.5081)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.79249, 5.7027, -89.3702)
 shape = SubResource("BoxShape3D_dnxj4")
 
 [node name="CollisionShape3D7" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.3142, 5.86543, -98.2609)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.3142, 5.86543, -106.319)
 shape = SubResource("BoxShape3D_h3bv4")
 
 [node name="CollisionShape3D9" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.6648, 4.9101, -101.377)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8799, 4.9101, -94.8712)
 shape = SubResource("BoxShape3D_y8e75")
 
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.694, 5.14569, -90.4773)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.58307, 5.14569, -88.8193)
 shape = SubResource("BoxShape3D_kekhd")
 
 [node name="CollisionShape3D10" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.40073, 4.8898, -112.464)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.464667, 4.8898, -99.4485)
 shape = SubResource("BoxShape3D_yw4cj")
 
 [node name="CollisionShape3D11" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.1703, 5.56703, -106.704)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.174, 5.56703, -116.827)
 shape = SubResource("BoxShape3D_ah77a")
 
 [node name="CollisionShape3D12" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9855, 4.76907, -119.877)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.4827, 6.49496, -119.368)
 shape = SubResource("BoxShape3D_wfupo")
 
 [node name="CollisionShape3D13" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.8416, 4.78442, -133.181)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.6749, 4.78442, -139.92)
 shape = SubResource("BoxShape3D_pcx75")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7028, 5.71344, -94.7057)
+shape = SubResource("BoxShape3D_sxxf3")
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.3726, 6.64957, -104.307)
+shape = SubResource("BoxShape3D_pwlae")
+
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7563, 6.63062, -102.251)
+shape = SubResource("BoxShape3D_hbss8")
+
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="InvisibleWalls/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.53, 6.63062, -92.7984)
+shape = SubResource("BoxShape3D_hbss8")
 
 [node name="trail_dirt_end_2" parent="." instance=ExtResource("9_lgnq3")]
 transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, -0.0210605, 0, -86.3392)
@@ -231,67 +256,115 @@ transform = Transform3D(-0.813344, 0, 0.581782, 0, 1, 0, -0.581782, 0, -0.813344
 transform = Transform3D(-7.10609e-09, -0.162568, 0.986697, 1, -4.37114e-08, 0, 4.31299e-08, 0.986697, 0.162568, -7.10785, -0.0438194, -13.841)
 
 [node name="ground_dirt_8" parent="." instance=ExtResource("4_2b7jn")]
-transform = Transform3D(3.5, 0, 0, 0, 2.8, 0, 0, 0, 2.8, 1.81537, 0.0424547, -101.258)
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 1, 2.53808, 0.0424547, -94.2572)
 
 [node name="ground_dirt_9" parent="." instance=ExtResource("4_2b7jn")]
-transform = Transform3D(4, 0, 0, 0, 2.8, 0, 0, 0, 2.8, 28.6071, 0, -101.556)
+transform = Transform3D(4, 0, 0, 0, 2.8, 0, 0, 0, 1, 28.6071, 0, -99.7212)
 
 [node name="ground_dirt_10" parent="." instance=ExtResource("4_2b7jn")]
-transform = Transform3D(3.8, 0, 0, 0, 2.8, 0, 0, 0, 2, 29.3604, 0, -120.089)
-
-[node name="ground_grass_12" parent="." instance=ExtResource("5_yhyu8")]
-transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, 0.275864, -0.11163, -116.164)
-
-[node name="ground_grass_13" parent="." instance=ExtResource("5_yhyu8")]
-transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 7, 29.762, -0.202233, -81.1692)
-
-[node name="ground_grass_14" parent="." instance=ExtResource("5_yhyu8")]
-transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 6, 0.197984, -0.0470066, -79.012)
+transform = Transform3D(-1.66103e-07, 0, 1, 0, 2.8, 0, -3.8, 0, -4.37114e-08, 40.2251, 0, -118.92)
 
 [node name="ground_dirt_11" parent="." instance=ExtResource("4_2b7jn")]
-transform = Transform3D(3.7, 0, 0, 0, 2.8, 0, 0, 0, 2, 59.2189, 0, -119.989)
-
-[node name="ground_grass_15" parent="." instance=ExtResource("5_yhyu8")]
-transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 7, 59.2292, -0.312767, -81.2583)
-
-[node name="ground_grass_16" parent="." instance=ExtResource("5_yhyu8")]
-transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5, 59.2292, -0.301792, -105.326)
+transform = Transform3D(5, 0, 0, 0, 2.8, 0, 0, 0, 1.5, 61.8147, 0, -128.02)
 
 [node name="rotating_log7" parent="." instance=ExtResource("10_524ot")]
 transform = Transform3D(-0.980911, 0, 0.194457, 0, 1, 0, -0.194457, 0, -0.980911, -6.87016, -0.0438194, -116.004)
 
 [node name="trail_dirt_end_3" parent="." instance=ExtResource("9_lgnq3")]
-transform = Transform3D(-5.68248e-07, 0, -13, 0, 5, 0, 13, 0, -5.68248e-07, -9.33712, 0, -101.228)
-
-[node name="ground_grass_17" parent="." instance=ExtResource("5_yhyu8")]
-transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, -29.3162, -0.05898, -116.127)
+transform = Transform3D(-2.18557e-07, 0, -5, 0, 1.925, 0, 5, 0, -2.18557e-07, -9.3456, 0, -94.1502)
 
 [node name="ground_grass_18" parent="." instance=ExtResource("5_yhyu8")]
-transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, -29.3162, -0.05898, -100.576)
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, -22.105, -0.05898, -101.16)
 
 [node name="ground_grass_19" parent="." instance=ExtResource("5_yhyu8")]
-transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, -29.3162, -0.05898, -78.1177)
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, -22.105, -0.05898, -78.7015)
 
 [node name="rock_4" parent="." instance=ExtResource("11_x0x7a")]
-transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 79.9762, -1.62176, -120.826)
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 89.6625, -1.62176, -126.941)
 
 [node name="rock_6" parent="." instance=ExtResource("11_x0x7a")]
-transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 90.5062, -1.62176, -120.826)
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 98.1479, -1.62176, -126.941)
 
 [node name="rock_7" parent="." instance=ExtResource("11_x0x7a")]
-transform = Transform3D(6.5533, 0, -4.5885, 0, 8, 0, 4.5885, 0, 6.5533, 103.605, -1.62176, -108.835)
+transform = Transform3D(6.5533, 0, -4.5885, 0, 8, 0, 4.5885, 0, 6.5533, 111.247, -1.62176, -114.95)
 
 [node name="rock_8" parent="." instance=ExtResource("11_x0x7a")]
-transform = Transform3D(6.5533, 0, -4.5885, 0, 8, 0, 4.5885, 0, 6.5533, 98.4045, -1.62176, -116.117)
+transform = Transform3D(6.5533, 0, -4.5885, 0, 8, 0, 4.5885, 0, 6.5533, 106.046, -1.62176, -122.232)
 
 [node name="rock_9" parent="." instance=ExtResource("11_x0x7a")]
-transform = Transform3D(7.96624, 0, 0.734237, 0, 8, 0, -0.734237, 0, 7.96624, 108.573, -1.62176, -101.049)
+transform = Transform3D(7.96624, 0, 0.734237, 0, 8, 0, -0.734237, 0, 7.96624, 116.215, -1.62176, -107.164)
 
 [node name="rock_10" parent="." instance=ExtResource("11_x0x7a")]
-transform = Transform3D(5.82726, 0, 5.48116, 0, 8, 0, -5.48116, 0, 5.82726, 114.374, -1.62176, -93.5375)
+transform = Transform3D(5.82726, 0, 5.48116, 0, 8, 0, -5.48116, 0, 5.82726, 122.016, -1.62176, -99.6524)
 
 [node name="rock_11" parent="." instance=ExtResource("11_x0x7a")]
-transform = Transform3D(-5.76199, 0, 5.54973, 0, 8, 0, -5.54973, 0, -5.76199, 120.117, -1.62176, -86.5473)
+transform = Transform3D(-5.76199, 0, 5.54973, 0, 8, 0, -5.54973, 0, -5.76199, 127.759, -1.62176, -92.6622)
 
 [node name="rock_12" parent="." instance=ExtResource("11_x0x7a")]
-transform = Transform3D(-5.47973, 0, -5.82859, 0, 8, 0, 5.82859, 0, -5.47973, 127.576, -1.62176, -82.187)
+transform = Transform3D(-5.47973, 0, -5.82859, 0, 8, 0, 5.82859, 0, -5.47973, 135.218, -1.62176, -88.3019)
+
+[node name="ground_grass_20" parent="." instance=ExtResource("5_yhyu8")]
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, -22.105, -0.05898, -123.58)
+
+[node name="ground_grass_21" parent="." instance=ExtResource("5_yhyu8")]
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, -22.105, -0.05898, -145.967)
+
+[node name="ground_grass_22" parent="." instance=ExtResource("5_yhyu8")]
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, 7.65488, -0.05898, -101.16)
+
+[node name="ground_grass_23" parent="." instance=ExtResource("5_yhyu8")]
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, 7.65488, -0.05898, -123.58)
+
+[node name="ground_grass_24" parent="." instance=ExtResource("5_yhyu8")]
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, 7.65488, -0.05898, -145.967)
+
+[node name="ground_grass_25" parent="." instance=ExtResource("5_yhyu8")]
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, 7.49995, -0.05898, -78.7015)
+
+[node name="ground_grass_26" parent="." instance=ExtResource("5_yhyu8")]
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, 7.65488, -0.05898, -101.16)
+
+[node name="ground_grass_27" parent="." instance=ExtResource("5_yhyu8")]
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, 7.65488, -0.05898, -123.58)
+
+[node name="ground_grass_28" parent="." instance=ExtResource("5_yhyu8")]
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, 7.65488, -0.05898, -145.967)
+
+[node name="ground_grass_29" parent="." instance=ExtResource("5_yhyu8")]
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, 7.49995, -0.05898, -78.7015)
+
+[node name="ground_grass_30" parent="." instance=ExtResource("5_yhyu8")]
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, 37.3188, -0.05898, -101.16)
+
+[node name="ground_grass_31" parent="." instance=ExtResource("5_yhyu8")]
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, 37.3188, -0.05898, -123.58)
+
+[node name="ground_grass_32" parent="." instance=ExtResource("5_yhyu8")]
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, 37.3188, -0.05898, -145.967)
+
+[node name="ground_grass_33" parent="." instance=ExtResource("5_yhyu8")]
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, 37.1639, -0.05898, -78.7015)
+
+[node name="ground_grass_34" parent="." instance=ExtResource("5_yhyu8")]
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, 66.9123, -0.05898, -101.16)
+
+[node name="ground_grass_35" parent="." instance=ExtResource("5_yhyu8")]
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, 66.9123, -0.05898, -123.58)
+
+[node name="ground_grass_36" parent="." instance=ExtResource("5_yhyu8")]
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, 66.9123, -0.05898, -145.967)
+
+[node name="ground_grass_37" parent="." instance=ExtResource("5_yhyu8")]
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, 66.7574, -0.05898, -78.7015)
+
+[node name="ground_grass_38" parent="." instance=ExtResource("5_yhyu8")]
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, 7.65488, -0.05898, -101.16)
+
+[node name="ground_grass_39" parent="." instance=ExtResource("5_yhyu8")]
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, 7.65488, -0.05898, -123.58)
+
+[node name="ground_grass_40" parent="." instance=ExtResource("5_yhyu8")]
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, 7.65488, -0.05898, -145.967)
+
+[node name="ground_grass_41" parent="." instance=ExtResource("5_yhyu8")]
+transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, 7.49995, -0.05898, -78.7015)
