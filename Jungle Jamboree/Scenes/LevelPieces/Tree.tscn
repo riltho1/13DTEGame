@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsx7hh7qvcldb"]
+
+[ext_resource type="PackedScene" uid="uid://brwlcgfmmq0ie" path="res://Models/tree_2.obj" id="1_rfrek"]
+[ext_resource type="Texture2D" uid="uid://dg38jmscybl7x" path="res://Models/palette.png" id="2_jm7ys"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gn758"]
+albedo_texture = ExtResource("2_jm7ys")
+
+[node name="tree_2" instance=ExtResource("1_rfrek")]
+
+[node name="Tree2_Cylinder_024" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_gn758")

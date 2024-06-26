@@ -124,9 +124,6 @@ transform = Transform3D(0.4, 0, 0, 0, -1.16564e-08, -1.33333, 0, 0.16, -3.49691e
 [node name="ground_dirt_11" parent="Foreground" instance=ExtResource("4_2b7jn")]
 transform = Transform3D(0.4, 0, 0, 0, -1.16564e-08, -1.33333, 0, 0.16, -3.49691e-08, 6.38983, -5.4443, -5.84205)
 
-[node name="water_4" parent="Foreground" instance=ExtResource("8_6cmq7")]
-transform = Transform3D(2.4, 0, 0, 0, 1, 0, 0, 0, 0.599999, 3, -9.769, -7.11821)
-
 [node name="ground_dirt_12" parent="Foreground" instance=ExtResource("4_2b7jn")]
 transform = Transform3D(0.45, 0, 0, 0, -1.16564e-08, -1.33333, 0, 0.16, -3.49691e-08, 3.05107, -5.44957, -8.3242)
 
@@ -155,6 +152,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.00001)
 
 [node name="ground_grass_10" parent="Foreground" instance=ExtResource("5_yhyu8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -4.00001)
+
+[node name="ground_grass_37" parent="Foreground" instance=ExtResource("5_yhyu8")]
+transform = Transform3D(370, 0, 0, 0, 15, 0, 0, 0, 280, 3370.3, -10.7418, -3950.96)
+
+[node name="water_4" parent="Foreground" instance=ExtResource("8_6cmq7")]
+transform = Transform3D(50, 0, 0, 0, 5, 0, 0, 0, 50, 32.4342, -10.4469, -15.8898)
 
 [node name="Player" parent="." instance=ExtResource("8_2ho58")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.8265, 0, -128.38)
@@ -368,3 +371,12 @@ transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, 7.65488, -0.05898, -145.9
 
 [node name="ground_grass_41" parent="." instance=ExtResource("5_yhyu8")]
 transform = Transform3D(7.4, 0, 0, 0, 3, 0, 0, 0, 5.6, 7.49995, -0.05898, -78.7015)
+
+[node name="ground_dirt_12" parent="." instance=ExtResource("4_2b7jn")]
+transform = Transform3D(10.1255, -0.33779, 0, 1.23052, 2.77955, 0, 0, 0, 1.5, 184.663, 4.30843, -88.1816)
+
+[node name="ground_grass_42" parent="." instance=ExtResource("5_yhyu8")]
+transform = Transform3D(20.3515, -0.378912, 0, 2.46281, 3.13116, 0, 0, 0, 5.887, 184.755, 4.69484, -71.5117)
+
+[node name="ground_grass_43" parent="." instance=ExtResource("5_yhyu8")]
+transform = Transform3D(20.3515, -0.378912, 0, 2.46281, 3.13116, 0, 0, 0, 5.887, 184.755, 4.69484, -105.201)
