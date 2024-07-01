@@ -160,7 +160,6 @@ transform = Transform3D(370, 0, 0, 0, 15, 0, 0, 0, 280, 3370.3, -10.7418, -3950.
 
 [node name="water_4" parent="Foreground" instance=ExtResource("8_6cmq7")]
 transform = Transform3D(50, 0, 0, 0, 5, 0, 0, 0, 50, 32.4342, -10.4469, -15.8898)
-visible = false
 
 [node name="Player" parent="." instance=ExtResource("8_2ho58")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.8265, 0, -128.38)
@@ -452,3 +451,33 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -6.69471, 0, -72.9807)
 
 [node name="tree_21" parent="." instance=ExtResource("12_14jdl")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -6.69471, 0, -85.0791)
+
+[node name="tree_22" parent="." instance=ExtResource("12_14jdl")]
+transform = Transform3D(-4, 0, -3.49691e-07, 0, 4, 0, 3.49691e-07, 0, -4, 268.924, 8.8791, -73.8029)
+
+[node name="tree_23" parent="." instance=ExtResource("12_14jdl")]
+transform = Transform3D(-4, 0, -3.49691e-07, 0, 4, 0, 3.49691e-07, 0, -4, 256.37, 8.8791, -73.9154)
+
+[node name="tree_24" parent="." instance=ExtResource("12_14jdl")]
+transform = Transform3D(-4, 0, -3.49691e-07, 0, 4, 0, 3.49691e-07, 0, -4, 243.021, 8.8791, -74.0419)
+
+[node name="tree_25" parent="." instance=ExtResource("12_14jdl")]
+transform = Transform3D(-4, 0, -3.49691e-07, 0, 4, 0, 3.49691e-07, 0, -4, 230.697, 8.8791, -74.1743)
+
+[node name="tree_26" parent="." instance=ExtResource("12_14jdl")]
+transform = Transform3D(-4, 0, -3.49691e-07, 0, 4, 0, 3.49691e-07, 0, -4, 217.512, 8.8791, -74.2968)
+
+[node name="tree_27" parent="." instance=ExtResource("12_14jdl")]
+transform = Transform3D(-4, 0, -3.49691e-07, 0, 4, 0, 3.49691e-07, 0, -4, 268.924, 8.8791, -102.38)
+
+[node name="tree_28" parent="." instance=ExtResource("12_14jdl")]
+transform = Transform3D(-4, 0, -3.49691e-07, 0, 4, 0, 3.49691e-07, 0, -4, 256.37, 8.8791, -102.492)
+
+[node name="tree_29" parent="." instance=ExtResource("12_14jdl")]
+transform = Transform3D(-4, 0, -3.49691e-07, 0, 4, 0, 3.49691e-07, 0, -4, 243.021, 8.8791, -102.619)
+
+[node name="tree_30" parent="." instance=ExtResource("12_14jdl")]
+transform = Transform3D(-4, 0, -3.49691e-07, 0, 4, 0, 3.49691e-07, 0, -4, 230.697, 8.8791, -102.751)
+
+[node name="tree_31" parent="." instance=ExtResource("12_14jdl")]
+transform = Transform3D(-4, 0, -3.49691e-07, 0, 4, 0, 3.49691e-07, 0, -4, 217.512, 8.8791, -102.874)
