@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://by0y3wremyrs5"]
+
+[ext_resource type="PackedScene" uid="uid://bmtfl31tew2lj" path="res://Scenes/LevelPieces/bigGrass.tscn" id="1_lx36o"]
+[ext_resource type="PackedScene" uid="uid://cswvebpdwj03v" path="res://Scenes/World/player.tscn" id="2_atcpf"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tq5xt"]
+sky_top_color = Color(0.528908, 0.599708, 0.698296, 1)
+sky_horizon_color = Color(0.682227, 0.692177, 0.707824, 1)
+sky_energy_multiplier = 5.0
+ground_horizon_color = Color(0.682227, 0.692177, 0.707824, 1)
+
+[sub_resource type="Sky" id="Sky_stguc"]
+sky_material = SubResource("ProceduralSkyMaterial_tq5xt")
+
+[sub_resource type="Environment" id="Environment_vwyag"]
+background_mode = 2
+sky = SubResource("Sky_stguc")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vwyag")
+
+[node name="ground_grass_4" parent="." instance=ExtResource("1_lx36o")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.0964088, 1.19209e-07, -0.0526683)
+
+[node name="Player" parent="." instance=ExtResource("2_atcpf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.812331, 7.15256e-07, -3.02388)
