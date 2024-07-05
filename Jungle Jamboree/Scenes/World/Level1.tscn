@@ -265,7 +265,7 @@ transform = Transform3D(5.66667, 0, 0, 0, 1.05133, 0, 0, 0, 0.799998, 83.527, 2.
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4.99999, 103.039, 2.8393, -12.6571)
 
 [node name="Player" parent="." instance=ExtResource("8_2ho58")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 232.01, 19.6226, -91.3297)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 232.01, 10.2605, -91.3297)
 
 [node name="InvisibleWalls" type="Node3D" parent="."]
 
@@ -395,9 +395,6 @@ transform = Transform3D(-5.76199, 0, 5.54973, 0, 8, 0, -5.54973, 0, -5.76199, 12
 [node name="rock_12" parent="." instance=ExtResource("11_x0x7a")]
 transform = Transform3D(-5.47973, 0, -5.82859, 0, 8, 0, 5.82859, 0, -5.47973, 131.922, -1.62176, -90.493)
 
-[node name="Cave" parent="." instance=ExtResource("13_ggkck")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 298.93, 4.53882, -87.8368)
-
 [node name="Trees" type="Node3D" parent="."]
 
 [node name="tree_2" parent="Trees" instance=ExtResource("12_14jdl")]
@@ -489,3 +486,6 @@ transform = Transform3D(-4, 0, -3.49691e-07, 0, 4, 0, 3.49691e-07, 0, -4, 230.69
 
 [node name="tree_31" parent="Trees" instance=ExtResource("12_14jdl")]
 transform = Transform3D(-4, 0, -3.49691e-07, 0, 4, 0, 3.49691e-07, 0, -4, 217.512, 8.8791, -102.874)
+
+[node name="Root Scene" parent="." instance=ExtResource("13_ggkck")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 294.97, 6.94257, -87.802)
