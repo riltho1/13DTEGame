@@ -35,5 +35,5 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tbhtr")
 transform = Transform3D(0.862045, 0.506831, 0, -0.506831, 0.862045, 0, -4.47035e-08, 2.98023e-08, 1, -2.32242, 1.76321, 4.1515e-07)
 shape = SubResource("BoxShape3D_dpm87")
 
-[connection signal="body_entered" from="Shadow Area" to="Shadow Area/MeshInstance3D" method="_on_shadow_area_body_entered"]
 [connection signal="body_entered" from="Shadow Area" to="Shadow Area" method="_on_body_entered"]
+[connection signal="body_entered" from="Shadow Area" to="Shadow Area/MeshInstance3D" method="_on_shadow_area_body_entered"]
