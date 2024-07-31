@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ljii1ynitxcv"]
+[gd_scene load_steps=5 format=3 uid="uid://ljii1ynitxcv"]
 
 [ext_resource type="Script" path="res://Scenes/UI/UI.gd" id="1_5t51d"]
+[ext_resource type="FontFile" uid="uid://ctb02tsn68oo8" path="res://Fonts/Retro Gaming.ttf" id="2_2rsd8"]
 [ext_resource type="Texture2D" uid="uid://dgrekarlo6qn3" path="res://2D Sprite/gold-coin.256x256.png" id="2_hthp4"]
 [ext_resource type="Texture2D" uid="uid://bqxujo7b7krbv" path="res://2D Sprite/Tanuki Icon.png" id="3_q77s2"]
 
@@ -36,17 +37,20 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_2rsd8")
 text = "5"
 horizontal_alignment = 2
 
 [node name="Score" type="Label" parent="Control/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2rsd8")
 text = "0"
 horizontal_alignment = 2
 
 [node name="Sheild" type="Label" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2rsd8")
 text = "0"
 horizontal_alignment = 2
 

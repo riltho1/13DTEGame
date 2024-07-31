@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cf166txy0mhiy"]
 
-[ext_resource type="PackedScene" uid="uid://cpry1k4gwi656" path="res://Models/rotating_log.obj" id="1_xk6le"]
-[ext_resource type="Texture2D" uid="uid://dg38jmscybl7x" path="res://Models/palette.png" id="2_xd0hm"]
+[ext_resource type="PackedScene" uid="uid://cpry1k4gwi656" path="res://Models/Pack 1/rotating_log.obj" id="1_xk6le"]
+[ext_resource type="Texture2D" uid="uid://dg38jmscybl7x" path="res://Models/Pack 1/palette.png" id="2_xd0hm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2uacq"]
 albedo_texture = ExtResource("2_xd0hm")

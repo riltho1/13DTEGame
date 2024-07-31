@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://jnp87k2tyyf1"]
 
-[ext_resource type="PackedScene" uid="uid://hdc2hu8q5dry" path="res://Models/bridge_1.obj" id="1_n316w"]
-[ext_resource type="Texture2D" uid="uid://dg38jmscybl7x" path="res://Models/palette.png" id="2_f1ec8"]
+[ext_resource type="PackedScene" uid="uid://hdc2hu8q5dry" path="res://Models/Pack 1/bridge_1.obj" id="1_n316w"]
+[ext_resource type="Texture2D" uid="uid://dg38jmscybl7x" path="res://Models/Pack 1/palette.png" id="2_f1ec8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4o0mu"]
 albedo_texture = ExtResource("2_f1ec8")

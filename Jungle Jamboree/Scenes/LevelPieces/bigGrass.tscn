@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bmtfl31tew2lj"]
 
-[ext_resource type="PackedScene" uid="uid://bn4bkpsk6tmpo" path="res://Models/ground_grass_4.obj" id="1_6wvth"]
-[ext_resource type="Texture2D" uid="uid://dg38jmscybl7x" path="res://Models/palette.png" id="2_1hsfj"]
+[ext_resource type="PackedScene" uid="uid://bn4bkpsk6tmpo" path="res://Models/Pack 1/ground_grass_4.obj" id="1_6wvth"]
+[ext_resource type="Texture2D" uid="uid://dg38jmscybl7x" path="res://Models/Pack 1/palette.png" id="2_1hsfj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n4jug"]
 albedo_texture = ExtResource("2_1hsfj")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://lnkoyyd8jo6b"]
 
-[ext_resource type="PackedScene" uid="uid://de6jj1arnbd0n" path="res://Models/tree_stump.obj" id="1_snpde"]
-[ext_resource type="Texture2D" uid="uid://dg38jmscybl7x" path="res://Models/palette.png" id="2_emdol"]
+[ext_resource type="PackedScene" uid="uid://de6jj1arnbd0n" path="res://Models/Pack 1/tree_stump.obj" id="1_snpde"]
+[ext_resource type="Texture2D" uid="uid://dg38jmscybl7x" path="res://Models/Pack 1/palette.png" id="2_emdol"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2rupa"]
 albedo_texture = ExtResource("2_emdol")

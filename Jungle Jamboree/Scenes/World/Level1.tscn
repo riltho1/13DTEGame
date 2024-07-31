@@ -266,7 +266,7 @@ transform = Transform3D(5.66667, 0, 0, 0, 1.05133, 0, 0, 0, 0.799998, 83.527, 2.
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4.99999, 103.039, 2.8393, -12.6571)
 
 [node name="Player" parent="." instance=ExtResource("8_2ho58")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 184.65, 15.5193, -88.8634)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15693, 2.19546, -4.26149)
 
 [node name="InvisibleWalls" type="Node3D" parent="."]
 
@@ -532,7 +532,7 @@ transform = Transform3D(3.40895, 0.0606562, -2.09173, 0, 3.99832, 0.115943, 2.09
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -6.69471, 0, -113.158)
 
 [node name="tree_28" parent="." instance=ExtResource("12_14jdl")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -17.2551, 0, -110.645)
+transform = Transform3D(2.53671, 0, 3.09275, 0, 4, 0, -3.09275, 0, 2.53671, -12.9102, 0, -108.768)
 
 [node name="tree_29" parent="." instance=ExtResource("12_14jdl")]
 transform = Transform3D(2.63838, 0, -3.00648, 0, 4, 0, 3.00648, 0, 2.63838, 1.22459, 0, -113.246)
@@ -749,12 +749,9 @@ transform = Transform3D(-0.527758, -0.177566, 0.830627, -0.184633, 0.978504, 0.0
 
 [node name="rotating_log11" parent="." instance=ExtResource("10_524ot")]
 transform = Transform3D(0.727302, -0.177566, 0.66295, 0.0586897, 0.978504, 0.197698, -0.683804, -0.104878, 0.722089, 175.351, 4.00369, -97.1893)
-metadata/_edit_group_ = true
 
 [node name="rotating_log12" parent="." instance=ExtResource("10_524ot")]
 transform = Transform3D(-0.0351996, -0.177566, 0.983479, -0.112818, 0.978504, 0.17263, -0.992992, -0.104878, -0.0544755, 172.616, 4.02998, -80.8933)
-metadata/_edit_group_ = true
 
 [node name="rotating_log13" parent="." instance=ExtResource("10_524ot")]
 transform = Transform3D(0.727302, -0.177566, 0.66295, 0.0586897, 0.978504, 0.197698, -0.683804, -0.104878, 0.722089, 227.946, 8.35744, -99.2439)
-metadata/_edit_group_ = true
