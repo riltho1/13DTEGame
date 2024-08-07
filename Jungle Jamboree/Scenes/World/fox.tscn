@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://brpndpcry4v0d"]
 
-[ext_resource type="PackedScene" uid="uid://d11okbpprl7x7" path="res://Models/fox.glb" id="1_lodj8"]
+[ext_resource type="PackedScene" uid="uid://d11okbpprl7x7" path="res://Models/Fox/fox.glb" id="1_lodj8"]
 
 [node name="fox" instance=ExtResource("1_lodj8")]
 

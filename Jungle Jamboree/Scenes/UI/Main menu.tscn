@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2hy02cnm6ney"]
+[gd_scene load_steps=7 format=3 uid="uid://b2hy02cnm6ney"]
 
-[ext_resource type="FontFile" uid="uid://dyy7gw6enpn38" path="res://Fonts/Romanica.ttf" id="1_icd38"]
+[ext_resource type="Script" path="res://Scenes/UI/Main menu.gd" id="1_gglwn"]
+[ext_resource type="Texture2D" uid="uid://btv6h62luyj5f" path="res://Assets/Resources/Jungle Jamboree.png" id="1_n8s6x"]
+[ext_resource type="FontFile" uid="uid://ctb02tsn68oo8" path="res://Fonts/Retro Gaming.ttf" id="3_aksf2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wp1c5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m88da"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_inf4k"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -9,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_gglwn")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -21,10 +30,71 @@ grow_vertical = 2
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer"]
-layout_mode = 2
+[node name="JungleJamboree" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(576, 327)
+scale = Vector2(0.6, 0.605556)
+texture = ExtResource("1_n8s6x")
+metadata/_edit_group_ = true
 
-[node name="Label" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_icd38")
-text = "Jungle Jamboree"
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_aksf2")
+theme_override_font_sizes/font_size = 60
+text = "
+Jungle Jamboree"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -149.0
+offset_right = 180.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Play" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+focus_mode = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.196078, 0.623529, 0.670588, 1)
+theme_override_fonts/font = ExtResource("3_aksf2")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wp1c5")
+text = "    Play"
+flat = true
+
+[node name="Settings" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.196078, 0.623529, 0.670588, 1)
+theme_override_fonts/font = ExtResource("3_aksf2")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m88da")
+text = "    Settings"
+flat = true
+
+[node name="Quit" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.195132, 0.622838, 0.670124, 1)
+theme_override_fonts/font = ExtResource("3_aksf2")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_inf4k")
+text = "    Quit"
+flat = true
+
+[node name="Gap" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
