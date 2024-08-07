@@ -1,6 +1,6 @@
 [gd_scene load_steps=33 format=3 uid="uid://crubyayd5kug"]
 
-[ext_resource type="Texture2D" uid="uid://b8avw30tg2obc" path="res://Assets/Textures/panoramic sky.jpg" id="1_cicub"]
+[ext_resource type="Texture2D" uid="uid://cgh6uohgy2k67" path="res://AllSkyFree/AllSkyFree_Skyboxes/Sky_Day_BlueSky_Equirect.png" id="1_d66wy"]
 [ext_resource type="PackedScene" uid="uid://cjhhgr5lygos" path="res://Scenes/LevelPieces/Path.tscn" id="1_vfwc1"]
 [ext_resource type="PackedScene" uid="uid://ofie44xd11l8" path="res://Scenes/LevelPieces/Path1.tscn" id="2_rjm43"]
 [ext_resource type="PackedScene" uid="uid://csnkvlxwahub0" path="res://Scenes/LevelPieces/bigDirt.tscn" id="4_2b7jn"]
@@ -16,18 +16,16 @@
 [ext_resource type="PackedScene" uid="uid://cjmjroy1sxibg" path="res://Scenes/LevelPieces/Cave.tscn" id="13_ggkck"]
 [ext_resource type="PackedScene" uid="uid://cxx1mkp7rbla1" path="res://Scenes/LevelPieces/Bush.tscn" id="14_lqb0e"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_7r67w"]
-panorama = ExtResource("1_cicub")
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vxtyk"]
+panorama = ExtResource("1_d66wy")
 
-[sub_resource type="Sky" id="Sky_vu6qp"]
-sky_material = SubResource("PanoramaSkyMaterial_7r67w")
+[sub_resource type="Sky" id="Sky_q7suw"]
+sky_material = SubResource("PanoramaSkyMaterial_vxtyk")
 
 [sub_resource type="Environment" id="Environment_6gg5q"]
 background_mode = 2
-background_energy_multiplier = 3.3
-sky = SubResource("Sky_vu6qp")
-tonemap_mode = 2
-glow_enabled = true
+sky = SubResource("Sky_q7suw")
+ssao_enabled = true
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_jeemf"]
 vertices = PackedVector3Array(-0.34893, 10.1497, -6.8336, 0.15107, 10.3997, -3.3336, 0.15107, 10.1497, -8.0836, -0.34893, 10.3997, 3.1664, -0.34893, 10.1497, 22.1664, 0.40107, 10.1497, 22.1664, 0.40107, 10.3997, 3.1664)
@@ -73,6 +71,10 @@ size = Vector3(23.3041, 14.2991, 1)
 size = Vector3(1, 14.2612, 5.08069)
 
 [node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_6gg5q")

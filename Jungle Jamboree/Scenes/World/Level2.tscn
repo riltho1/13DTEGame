@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://by0y3wremyrs5"]
 
-[ext_resource type="Texture2D" uid="uid://b8avw30tg2obc" path="res://Assets/Textures/panoramic sky.jpg" id="1_ii42t"]
+[ext_resource type="Texture2D" uid="uid://cgh6uohgy2k67" path="res://AllSkyFree/AllSkyFree_Skyboxes/Sky_Day_BlueSky_Equirect.png" id="1_272c4"]
 [ext_resource type="PackedScene" uid="uid://bmtfl31tew2lj" path="res://Scenes/LevelPieces/bigGrass.tscn" id="1_lx36o"]
 [ext_resource type="PackedScene" uid="uid://cswvebpdwj03v" path="res://Scenes/World/player.tscn" id="2_atcpf"]
 [ext_resource type="PackedScene" uid="uid://bsx7hh7qvcldb" path="res://Scenes/LevelPieces/Tree.tscn" id="3_6nx2d"]
@@ -10,19 +10,22 @@
 [ext_resource type="PackedScene" uid="uid://cf166txy0mhiy" path="res://Scenes/LevelPieces/Log.tscn" id="8_rvday"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2yr32"]
-panorama = ExtResource("1_ii42t")
+panorama = ExtResource("1_272c4")
 
 [sub_resource type="Sky" id="Sky_stguc"]
 sky_material = SubResource("PanoramaSkyMaterial_2yr32")
 
 [sub_resource type="Environment" id="Environment_vwyag"]
 background_mode = 2
-background_energy_multiplier = 3.3
 sky = SubResource("Sky_stguc")
 tonemap_mode = 2
 glow_enabled = true
 
 [node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vwyag")

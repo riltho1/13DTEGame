@@ -22,8 +22,8 @@ var is_grounded = false
 var can_double_jump = false
 
 # Onready Variables
-@onready var model = $gobot
-@onready var animation = $gobot/AnimationPlayer
+@onready var model = $fox
+@onready var animation = $fox/AnimationPlayer
 @onready var spring_arm = %Gimbal
 
 @onready var particle_trail = $ParticleTrail
