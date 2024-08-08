@@ -111,6 +111,10 @@ func player_animations():
 			footsteps.stream_paused = false
 		else:
 			animation.play("Idle", 0.5)
+	
+	if Input.is_action_just_pressed("attack"):
+		animation.play("Attack")
+		
 
 func _on_hit_box_body_entered(body):
 	if body.is_in_group("Enemy"):
