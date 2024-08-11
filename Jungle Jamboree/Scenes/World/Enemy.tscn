@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cptq8q2kbt1tj"]
+[gd_scene load_steps=7 format=3 uid="uid://cptq8q2kbt1tj"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_7xyt7"]
+[ext_resource type="Script" path="res://Scenes/World/BaseEnemyStateMachine.gd" id="2_7n4by"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1ow41"]
 
@@ -34,6 +35,17 @@ collision_mask = 3
 [node name="EnemyVision" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.08567)
 shape = SubResource("BoxShape3D_vca4j")
+
+[node name="State Machine" type="Node" parent="."]
+script = ExtResource("2_7n4by")
+
+[node name="Idle" type="Node" parent="State Machine"]
+
+[node name="Pursuit" type="Node" parent="State Machine"]
+
+[node name="Attack" type="Node" parent="State Machine"]
+
+[node name="Return" type="Node" parent="State Machine"]
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
