@@ -84,7 +84,7 @@ environment = SubResource("Environment_6gg5q")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0539517, 0.548052, -4.26149)
 
 [node name="Enemy" parent="." instance=ExtResource("9_jxg12")]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 1.20946, -22.8427)
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0.499179, -22.843)
 
 [node name="Path" type="NavigationRegion3D" parent="."]
 transform = Transform3D(7.2, 0, 0, 0, 3, 0, 0, 0, 3, 0, -29.307, -60.591)

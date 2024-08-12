@@ -1,14 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cptq8q2kbt1tj"]
+[gd_scene load_steps=5 format=3 uid="uid://cptq8q2kbt1tj"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_7xyt7"]
-[ext_resource type="Script" path="res://Scenes/World/BaseEnemyStateMachine.gd" id="2_7n4by"]
+[ext_resource type="PackedScene" uid="uid://b58g30qimnpyw" path="res://Models/Green Enemy.fbx" id="2_bssad"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1ow41"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_mj0ec"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qoqne"]
-albedo_color = Color(1, 0, 0, 1)
+radius = 0.546787
+height = 1.19041
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vca4j"]
 size = Vector3(10.7001, 1.17145, 12.5542)
@@ -19,12 +16,22 @@ collision_mask = 2
 script = ExtResource("1_7xyt7")
 
 [node name="DeathOrAttack" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0367082, 0)
 shape = SubResource("CapsuleShape3D_1ow41")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-layers = 2
-mesh = SubResource("CapsuleMesh_mj0ec")
-surface_material_override/0 = SubResource("StandardMaterial3D_qoqne")
+[node name="Green Enemy" parent="." instance=ExtResource("2_bssad")]
+transform = Transform3D(-0.7, 0, -1.05697e-07, 0, 0.7, 0, 1.05697e-07, 0, -0.7, 0, -0.428979, 0)
+
+[node name="Skeleton3D" parent="Green Enemy/RootNode/MonsterArmature" index="0"]
+bones/0/scale = Vector3(1, 1, 1)
+bones/1/position = Vector3(-7.80307e-20, 0.000898253, 0.00500828)
+bones/3/position = Vector3(0, 1.32349e-25, 0.00472872)
+bones/3/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(0, 0, 0, 1)
+bones/7/position = Vector3(-0.00430698, 0.00469323, 0.00506212)
+bones/7/rotation = Quaternion(0, 0, 0, 1)
+bones/9/position = Vector3(0.00430698, 0.00469323, 0.00506212)
+bones/9/rotation = Quaternion(0, 0, 0, 1)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
@@ -37,7 +44,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.08567)
 shape = SubResource("BoxShape3D_vca4j")
 
 [node name="State Machine" type="Node" parent="."]
-script = ExtResource("2_7n4by")
 
 [node name="Idle" type="Node" parent="State Machine"]
 
@@ -49,3 +55,5 @@ script = ExtResource("2_7n4by")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+
+[editable path="Green Enemy"]

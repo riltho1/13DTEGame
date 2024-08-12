@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfr4h3f60b45m"]
+
+[ext_resource type="PackedScene" uid="uid://b58g30qimnpyw" path="res://Models/Green Enemy.fbx" id="1_fxfp1"]
+
+[node name="Green Enemy" instance=ExtResource("1_fxfp1")]
+
+[node name="Skeleton3D" parent="RootNode/MonsterArmature" index="0"]
+bones/0/scale = Vector3(1, 1, 1)
+bones/3/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(-2.16854e-19, 3.54744e-10, -0.0111856, 0.999937)

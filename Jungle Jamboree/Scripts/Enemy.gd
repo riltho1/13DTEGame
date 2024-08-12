@@ -8,6 +8,7 @@ var player_chase = false
 
 func _ready():
 	nav_agent.set_velocity(Vector3.ZERO)
+	
 
 func _physics_process(delta):
 	var overlapping_bodies = vision_area.get_overlapping_bodies()
@@ -24,6 +25,8 @@ func _physics_process(delta):
 	
 	velocity = nav_agent.velocity
 	move_and_slide()
+
+
 
 	
 	
