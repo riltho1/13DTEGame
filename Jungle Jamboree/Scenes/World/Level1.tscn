@@ -83,8 +83,16 @@ environment = SubResource("Environment_6gg5q")
 [node name="Player" parent="." instance=ExtResource("8_2ho58")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0539517, 0.548052, -4.26149)
 
-[node name="Enemy" parent="." instance=ExtResource("9_jxg12")]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0.499179, -22.843)
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0.122582, -33.0311)
+
+[node name="Marker3D2" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.123, -19.311)
+
+[node name="Enemy" parent="." node_paths=PackedStringArray("point1", "point2") instance=ExtResource("9_jxg12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.422239, -22.843)
+point1 = NodePath("../Marker3D")
+point2 = NodePath("../Marker3D2")
 
 [node name="Path" type="NavigationRegion3D" parent="."]
 transform = Transform3D(7.2, 0, 0, 0, 3, 0, 0, 0, 3, 0, -29.307, -60.591)
@@ -118,7 +126,7 @@ transform = Transform3D(0.694444, 0, 0, 0, 1.66667, 0, 0, 0, 1.66667, 0, 9.769, 
 transform = Transform3D(0.694444, 0, 0, 0, 1.66667, -0.000610867, 0, 0.000610867, 1.66667, 0, 9.769, -6.91693)
 
 [node name="ground_grass_12" parent="Path" instance=ExtResource("5_yhyu8")]
-transform = Transform3D(0.416667, 0, 0, 0, 1, 0, 0, 0, 5, 0.0182569, 9.64967, 12.4197)
+transform = Transform3D(0.417, 0, 0, 0, 1, 0, 0, 0, 4.8, 0.0182569, 9.77656, 12.2721)
 
 [node name="trail_dirt_end_2" parent="Path" instance=ExtResource("9_lgnq3")]
 transform = Transform3D(-0.694444, 0, -2.5166e-07, 0, 1.66667, 0, 1.04858e-07, 0, -1.66667, -0.00292507, 9.769, -8.58274)
@@ -181,7 +189,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -4.00001)
 transform = Transform3D(370, 0, 0, 0, 15, 0, 0, 0, 280, 3370.3, -10.7418, -3950.96)
 
 [node name="water_4" parent="Foreground" instance=ExtResource("8_6cmq7")]
-transform = Transform3D(40, 0, 0, 0, 1, 0, 0, 0, 40, 32.4342, -10.4469, -15.8898)
+transform = Transform3D(60, 0, 0, 0, 1, 0, 0, 0, 60, 0, -13.2681, 0)
 
 [node name="ground_grass_20" parent="Foreground" instance=ExtResource("5_yhyu8")]
 transform = Transform3D(2.46667, 0, 0, 0, 1, 0, 0, 0, 1.12, -4.36833, -0.01966, -19.716)

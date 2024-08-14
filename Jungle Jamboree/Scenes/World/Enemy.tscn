@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cptq8q2kbt1tj"]
+[gd_scene load_steps=4 format=3 uid="uid://cptq8q2kbt1tj"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_7xyt7"]
 [ext_resource type="PackedScene" uid="uid://b58g30qimnpyw" path="res://Models/Green Enemy.fbx" id="2_bssad"]
@@ -7,10 +7,8 @@
 radius = 0.546787
 height = 1.19041
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_vca4j"]
-size = Vector3(10.7001, 1.17145, 12.5542)
-
 [node name="Enemy" type="CharacterBody3D" groups=["Enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.437271, 0)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_7xyt7")
@@ -23,10 +21,8 @@ shape = SubResource("CapsuleShape3D_1ow41")
 transform = Transform3D(-0.7, 0, -1.05697e-07, 0, 0.7, 0, 1.05697e-07, 0, -0.7, 0, -0.428979, 0)
 
 [node name="Skeleton3D" parent="Green Enemy/RootNode/MonsterArmature" index="0"]
-bones/0/scale = Vector3(1, 1, 1)
 bones/1/position = Vector3(-7.80307e-20, 0.000898253, 0.00500828)
 bones/3/position = Vector3(0, 1.32349e-25, 0.00472872)
-bones/3/scale = Vector3(1, 1, 1)
 bones/5/rotation = Quaternion(0, 0, 0, 1)
 bones/7/position = Vector3(-0.00430698, 0.00469323, 0.00506212)
 bones/7/rotation = Quaternion(0, 0, 0, 1)
@@ -36,12 +32,16 @@ bones/9/rotation = Quaternion(0, 0, 0, 1)
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.293641, 0)
 collision_layer = 3
 collision_mask = 3
 
-[node name="EnemyVision" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.08567)
-shape = SubResource("BoxShape3D_vca4j")
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Area3D"]
+transform = Transform3D(-4.99977, 0.000239676, 0.0477751, -0.047772, -0.0874546, -4.99901, 0.000595891, -4.99924, 0.0874529, 0, 2.3527, 0)
+polygon = PackedVector2Array(-2, 5, 2, 5, 0, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -25)
 
 [node name="State Machine" type="Node" parent="."]
 
