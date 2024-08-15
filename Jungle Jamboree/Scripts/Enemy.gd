@@ -22,7 +22,6 @@ func _physics_process(delta):
 		player_chase = false
 		
 	if not player_chase and target:
-		print("patrol")
 		look_at(target.global_transform.origin)
 		rotation.x = 0
 		rotation.z = 0
@@ -36,7 +35,6 @@ func _physics_process(delta):
 		
 # Check if the player is inside the vision area	
 	elif player_chase and player:
-		print("chase")
 		look_at(player.global_transform.origin)
 		rotation.x = 0
 		rotation.z = 0

@@ -114,7 +114,7 @@ func player_animations():
 	
 	if Input.is_action_just_pressed("attack"):
 		animation.play("Attack")
-		
+		animation.play("Hitbox Sword")
 
 func _on_hit_box_body_entered(body):
 	if body.is_in_group("Enemy"):

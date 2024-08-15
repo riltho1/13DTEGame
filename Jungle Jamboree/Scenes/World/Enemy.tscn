@@ -21,13 +21,18 @@ shape = SubResource("CapsuleShape3D_1ow41")
 transform = Transform3D(-0.7, 0, -1.05697e-07, 0, 0.7, 0, 1.05697e-07, 0, -0.7, 0, -0.428979, 0)
 
 [node name="Skeleton3D" parent="Green Enemy/RootNode/MonsterArmature" index="0"]
+bones/0/position = Vector3(0, 1.7551e-27, 0.000102282)
 bones/1/position = Vector3(-7.80307e-20, 0.000898253, 0.00500828)
-bones/3/position = Vector3(0, 1.32349e-25, 0.00472872)
-bones/5/rotation = Quaternion(0, 0, 0, 1)
+bones/3/position = Vector3(0, 1.32349e-25, 0.00502702)
+bones/3/rotation = Quaternion(0.725602, 0, 0, 0.688115)
+bones/5/rotation = Quaternion(0.00567403, 2.42561e-21, -9.33335e-10, 0.999984)
 bones/7/position = Vector3(-0.00430698, 0.00469323, 0.00506212)
 bones/7/rotation = Quaternion(0, 0, 0, 1)
 bones/9/position = Vector3(0.00430698, 0.00469323, 0.00506212)
 bones/9/rotation = Quaternion(0, 0, 0, 1)
+
+[node name="AnimationPlayer" parent="Green Enemy" index="1"]
+autoplay = "MonsterArmature|Jump"
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
