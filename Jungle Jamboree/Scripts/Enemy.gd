@@ -11,7 +11,6 @@ var target
 func _ready():
 	target = point1
 	nav_agent.set_velocity(Vector3.ZERO)
-	
 
 func _physics_process(delta):
 	var overlapping_bodies = vision_area.get_overlapping_bodies()
@@ -42,14 +41,10 @@ func _physics_process(delta):
 		nav_agent.set_velocity(direction * speed)
 		#else:
 	else:
-		print("stop")
 		nav_agent.set_velocity(Vector3.ZERO)
 	
 	velocity = nav_agent.velocity
 	move_and_slide()
-
-
-
 	
-	
-	
+func die():
+	queue_free()

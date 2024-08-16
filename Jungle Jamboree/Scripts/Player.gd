@@ -37,7 +37,6 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * 2
 func _process(delta):
 	player_animations()
 	get_input(delta)
-	
 	# Smoothly follow player's position
 	spring_arm.position = lerp(spring_arm.position, position, delta * follow_lerp_factor)
 	
@@ -114,7 +113,6 @@ func player_animations():
 	
 	if Input.is_action_just_pressed("attack"):
 		animation.play("Attack")
-		animation.play("Hitbox Sword")
 
 func _on_hit_box_body_entered(body):
 	if body.is_in_group("Enemy"):
