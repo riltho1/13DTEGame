@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cgh6uohgy2k67" path="res://AllSkyFree/AllSkyFree_Skyboxes/Sky_Day_BlueSky_Equirect.png" id="1_272c4"]
 [ext_resource type="PackedScene" uid="uid://bmtfl31tew2lj" path="res://Scenes/LevelPieces/bigGrass.tscn" id="1_lx36o"]
-[ext_resource type="PackedScene" uid="uid://cswvebpdwj03v" path="res://Scenes/World/player.tscn" id="2_atcpf"]
+[ext_resource type="PackedScene" uid="uid://cswvebpdwj03v" path="res://Scenes/World/Player.tscn" id="2_atcpf"]
 [ext_resource type="PackedScene" uid="uid://bsx7hh7qvcldb" path="res://Scenes/LevelPieces/Tree.tscn" id="3_6nx2d"]
 [ext_resource type="PackedScene" uid="uid://cxx1mkp7rbla1" path="res://Scenes/LevelPieces/Bush.tscn" id="4_ga7b5"]
 [ext_resource type="PackedScene" uid="uid://csnkvlxwahub0" path="res://Scenes/LevelPieces/bigDirt.tscn" id="5_ki3g6"]

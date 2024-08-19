@@ -58,7 +58,6 @@ target_position = Vector3(0, 0, -25)
 
 [node name="Return" type="Node" parent="State Machine"]
 
-[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 
 [editable path="Green Enemy"]

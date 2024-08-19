@@ -114,8 +114,13 @@ func player_animations():
 	
 	if Input.is_action_just_pressed("attack"):
 		animation.play("Attack")
-		animation.play("Hitbox Sword")
+
 
 func _on_hit_box_body_entered(body):
 	if body.is_in_group("Enemy"):
 		get_tree().reload_current_scene()
+
+
+func _on_enemy_hit_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Enemy"):
+		body.take_damage()

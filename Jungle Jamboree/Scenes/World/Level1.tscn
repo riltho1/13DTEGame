@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://csnkvlxwahub0" path="res://Scenes/LevelPieces/bigDirt.tscn" id="4_2b7jn"]
 [ext_resource type="PackedScene" uid="uid://bmtfl31tew2lj" path="res://Scenes/LevelPieces/bigGrass.tscn" id="5_yhyu8"]
 [ext_resource type="PackedScene" uid="uid://jnp87k2tyyf1" path="res://Scenes/LevelPieces/Bridge.tscn" id="7_gkcvd"]
-[ext_resource type="PackedScene" uid="uid://cswvebpdwj03v" path="res://Scenes/World/player.tscn" id="8_2ho58"]
+[ext_resource type="PackedScene" uid="uid://cswvebpdwj03v" path="res://Scenes/World/Player.tscn" id="8_2ho58"]
 [ext_resource type="PackedScene" uid="uid://bwqkoqjn5odfc" path="res://Scenes/LevelPieces/Water.tscn" id="8_6cmq7"]
 [ext_resource type="PackedScene" uid="uid://cptq8q2kbt1tj" path="res://Scenes/World/Enemy.tscn" id="9_jxg12"]
 [ext_resource type="PackedScene" uid="uid://cfes2f8jcupm2" path="res://Scenes/LevelPieces/Dirt end.tscn" id="9_lgnq3"]
