@@ -4,14 +4,18 @@
 [ext_resource type="PackedScene" uid="uid://b58g30qimnpyw" path="res://Models/Green Enemy.fbx" id="2_bssad"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1ow41"]
-radius = 0.51278
-height = 1.23342
+radius = 0.546787
+height = 1.19041
 
 [node name="Enemy" type="CharacterBody3D" groups=["Enemy"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.437271, 0)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_7xyt7")
+
+[node name="DeathOrAttack" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0367082, 0)
+shape = SubResource("CapsuleShape3D_1ow41")
 
 [node name="Green Enemy" parent="." instance=ExtResource("2_bssad")]
 transform = Transform3D(-0.7, 0, -1.05697e-07, 0, 0.7, 0, 1.05697e-07, 0, -0.7, 0, -0.428979, 0)
@@ -53,12 +57,6 @@ target_position = Vector3(0, 0, -25)
 [node name="Attack" type="Node" parent="State Machine"]
 
 [node name="Return" type="Node" parent="State Machine"]
-
-[node name="Enemy Hitbox" type="Area3D" parent="." groups=["Enemy"]]
-
-[node name="DeathOrAttack" type="CollisionShape3D" parent="Enemy Hitbox" groups=["Enemy"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0633566, 0)
-shape = SubResource("CapsuleShape3D_1ow41")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
