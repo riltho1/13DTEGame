@@ -5,14 +5,15 @@ var player_chase = false
 @export var speed = 5
 @onready var player: Node3D = get_tree().get_first_node_in_group("Player")
 @onready var vision_area: Area3D = $Area3D
+@onready var anim = $GreenEnemy/AnimationPlayer
 @export var point1 : Marker3D
 @export var point2 : Marker3D
 var target
+
+
 func _ready():
 	target = point1
 	nav_agent.set_velocity(Vector3.ZERO)
-
-
 
 func _physics_process(delta):
 	var overlapping_bodies = vision_area.get_overlapping_bodies()
@@ -41,17 +42,16 @@ func _physics_process(delta):
 		rotation.z = 0
 		var direction = (player.global_transform.origin - global_transform.origin).normalized()
 		nav_agent.set_velocity(direction * speed)
-		#else:
 	else:
 		nav_agent.set_velocity(Vector3.ZERO)
 	
 	velocity = nav_agent.velocity
 	move_and_slide()
 	
-	
 func take_damage():
+	$DeathOrAttack.disabled
+	anim.play('MonsterArmature|Death')
+	await anim.animation_finished
+	print("delete")
 	queue_free()
-
-
-		
-		
+	

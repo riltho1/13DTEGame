@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://cswvebpdwj03v"]
+[gd_scene load_steps=12 format=3 uid="uid://cswvebpdwj03v"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_t0xh4"]
 [ext_resource type="PackedScene" uid="uid://d11okbpprl7x7" path="res://Models/Fox/fox.glb" id="2_6fwyx"]
-[ext_resource type="Script" path="res://Scenes/World/enemy_hit.gd" id="3_fimul"]
 [ext_resource type="Script" path="res://Scripts/CameraMovement.gd" id="5_pxu3x"]
 [ext_resource type="ArrayMesh" uid="uid://deu06eho4c74" path="res://Assets/Resources/cloud.res" id="6_nkgvq"]
 [ext_resource type="AudioStream" uid="uid://ncq6fpsrcmjh" path="res://Assets/Audio/SFX/walking.ogg" id="7_asqdb"]
@@ -12,7 +11,7 @@ radius = 0.407547
 height = 1.37478
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2jv8n"]
-size = Vector3(1.00934, 0.527344, 0.216064)
+size = Vector3(1.00934, 0.92041, 0.216064)
 
 [sub_resource type="BoxMesh" id="BoxMesh_gjqdj"]
 size = Vector3(0.53, 0.505, 0.195)
@@ -63,7 +62,6 @@ bones/22/scale = Vector3(1.00001, 1, 0.999643)
 [node name="EnemyHit" type="Area3D" parent="fox" groups=["Hurt"]]
 collision_layer = 0
 collision_mask = 2
-script = ExtResource("3_fimul")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="fox/EnemyHit"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0834142, 0.724798, 0.66371)
@@ -71,11 +69,11 @@ shape = SubResource("BoxShape3D_2jv8n")
 disabled = true
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="fox/EnemyHit"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0834142, 0.757502, 0.66371)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0834142, 0.705315, 0.66371)
 shape = SubResource("BoxShape3D_2jv8n")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="fox/EnemyHit"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.11082e-08, 0.684541, 0.683484)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0575472, 0.684541, 0.683484)
 mesh = SubResource("BoxMesh_gjqdj")
 
 [node name="Gimbal" type="Node3D" parent="."]
@@ -111,6 +109,8 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649094, -0.0105292)
 shape = SubResource("CapsuleShape3D_hy8v6")
+
+[node name="Timer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="fox/EnemyHit" to="." method="_on_enemy_hit_body_entered"]
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]

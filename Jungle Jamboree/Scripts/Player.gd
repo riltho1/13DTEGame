@@ -57,8 +57,8 @@ func _process(delta):
 		if is_on_floor():
 			perform_jump()
 		elif can_double_jump:
-			if is_moving():
-				perform_flip_jump()
+			perform_jump()
+			can_double_jump = false
 	
 	velocity.y -= gravity * delta
 
@@ -122,5 +122,7 @@ func _on_hit_box_body_entered(body):
 
 
 func _on_enemy_hit_body_entered(body: Node3D) -> void:
+	print(body)
 	if body.is_in_group("Enemy"):
+		print("enemy hit")
 		body.take_damage()
