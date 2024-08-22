@@ -50,6 +50,7 @@ func _physics_process(delta):
 	
 func take_damage():
 	$DeathOrAttack.disabled
+	remove_from_group("Enemy")
 	anim.play('MonsterArmature|Death')
 	await anim.animation_finished
 	print("delete")

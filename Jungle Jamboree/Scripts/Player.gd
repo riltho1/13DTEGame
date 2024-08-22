@@ -114,6 +114,7 @@ func player_animations():
 	
 	if Input.is_action_just_pressed("attack"):
 		animation.play("Attack")
+		
 
 
 func _on_hit_box_body_entered(body):
