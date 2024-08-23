@@ -81,18 +81,7 @@ shadow_enabled = true
 environment = SubResource("Environment_6gg5q")
 
 [node name="Player" parent="." instance=ExtResource("8_2ho58")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0539517, 0.548052, -4.26149)
-
-[node name="Marker3D" type="Marker3D" parent="."]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0.122582, -33.0311)
-
-[node name="Marker3D2" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.123, -19.311)
-
-[node name="Enemy" parent="." node_paths=PackedStringArray("point1", "point2") instance=ExtResource("9_jxg12")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.422392, -22.843)
-point1 = NodePath("../Marker3D")
-point2 = NodePath("../Marker3D2")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0539517, 0.122547, -4.26149)
 
 [node name="Path" type="NavigationRegion3D" parent="."]
 transform = Transform3D(7.2, 0, 0, 0, 3, 0, 0, 0, 3, 0, -29.307, -60.591)
@@ -770,5 +759,29 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 295.789, 6.05995, -85.8182)
 stream = ExtResource("16_cds4i")
 volume_db = 15.0
 autoplay = true
+
+[node name="EnemyMarkers" type="Node3D" parent="."]
+
+[node name="Marker3D" type="Marker3D" parent="EnemyMarkers"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0.002, -33.031)
+
+[node name="Marker3D2" type="Marker3D" parent="EnemyMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00233267, -19.311)
+
+[node name="Enemy" parent="EnemyMarkers" node_paths=PackedStringArray("point1", "point2") instance=ExtResource("9_jxg12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.312918, -22.843)
+point1 = NodePath("../Marker3D")
+point2 = NodePath("../Marker3D2")
+
+[node name="Enemy2" parent="EnemyMarkers" node_paths=PackedStringArray("point1", "point2") instance=ExtResource("9_jxg12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.312918, -42.9282)
+point1 = NodePath("../Marker3D3")
+point2 = NodePath("../Marker3D4")
+
+[node name="Marker3D3" type="Marker3D" parent="EnemyMarkers"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0.002, -36.7651)
+
+[node name="Marker3D4" type="Marker3D" parent="EnemyMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00233267, -49.4152)
 
 [connection signal="finished" from="Music - Level 1" to="Music - Level 1" method="_on_finished"]
