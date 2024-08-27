@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cswvebpdwj03v"]
+[gd_scene load_steps=15 format=3 uid="uid://cswvebpdwj03v"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_t0xh4"]
 [ext_resource type="PackedScene" uid="uid://d11okbpprl7x7" path="res://Models/Fox/fox.glb" id="2_6fwyx"]
@@ -11,7 +11,9 @@ radius = 0.407547
 height = 1.37478
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2jv8n"]
-size = Vector3(1.00934, 0.92041, 0.216064)
+size = Vector3(1.00934, 0.92041, 0.942505)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dg85g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_02pkc"]
 diffuse_mode = 2
@@ -77,20 +79,20 @@ shape = SubResource("CapsuleShape3D_oo8ef")
 transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 0, 0, 0)
 
 [node name="Skeleton3D" parent="fox/IdleDemo" index="0"]
-bones/4/rotation = Quaternion(0.0127471, 0.00767867, 0.0498915, 0.998644)
+bones/4/rotation = Quaternion(0.00712331, 0.0857733, 0.0706368, 0.993782)
 bones/5/rotation = Quaternion(-0.0132681, -1.2481e-08, -1.2481e-08, 0.999912)
 bones/6/rotation = Quaternion(-0.572387, 8.31941e-16, -5.97963e-16, 0.819984)
-bones/8/rotation = Quaternion(-0.37944, -0.523256, 0.0318897, 0.762372)
-bones/9/rotation = Quaternion(-1.94628e-06, -1.98917e-07, -0.70877, 0.70544)
-bones/10/rotation = Quaternion(0.255008, 0.292063, -0.347272, 0.853857)
-bones/11/position = Vector3(0.342069, 0.191317, 0.0919846)
-bones/11/rotation = Quaternion(-0.715161, 0.029849, -0.0407082, 0.697134)
-bones/12/rotation = Quaternion(-0.715161, 0.029849, -0.0407082, 0.697134)
+bones/8/rotation = Quaternion(-0.27509, -0.633692, 0.0614595, 0.720405)
+bones/9/rotation = Quaternion(-8.77963e-07, -2.52326e-07, -0.326406, 0.94523)
+bones/10/rotation = Quaternion(0.533371, -0.153332, 0.166412, 0.815053)
+bones/11/position = Vector3(0.42925, 0.270252, -0.00717328)
+bones/11/rotation = Quaternion(-0.707747, -0.0107031, -0.110599, 0.697673)
+bones/12/rotation = Quaternion(-0.707747, -0.0107031, -0.110599, 0.697673)
 bones/14/rotation = Quaternion(-0.336276, 0.498575, 0.186935, 0.776786)
-bones/16/rotation = Quaternion(-0.715161, 0.029849, -0.0407082, 0.697134)
-bones/17/rotation = Quaternion(-0.715161, 0.029849, -0.0407082, 0.697134)
+bones/16/rotation = Quaternion(-0.707747, -0.0107031, -0.110599, 0.697673)
+bones/17/rotation = Quaternion(-0.707747, -0.0107031, -0.110599, 0.697673)
 bones/18/rotation = Quaternion(-0.716426, 1.56871e-10, -1.74981e-08, 0.697663)
-bones/22/rotation = Quaternion(0.998644, -0.0498915, 0.00767844, 0.0127494)
+bones/22/rotation = Quaternion(0.993782, -0.0706372, 0.085773, 0.00712556)
 bones/22/scale = Vector3(1.00001, 1, 0.999643)
 
 [node name="EnemyHit" type="Area3D" parent="fox" groups=["Hurt"]]
@@ -98,14 +100,16 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="fox/EnemyHit"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0253277, 0.724798, 0.66371)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0253277, 0.724798, 1.02693)
 shape = SubResource("BoxShape3D_2jv8n")
 disabled = true
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="fox/EnemyHit"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0253277, 0.705315, 0.66371)
-visible = false
-shape = SubResource("BoxShape3D_2jv8n")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="fox/EnemyHit/CollisionShape3D"]
+mesh = SubResource("BoxMesh_dg85g")
+
+[node name="Timer" type="Timer" parent="fox/EnemyHit"]
+wait_time = 0.2
+autostart = true
 
 [node name="Gimbal" type="Node3D" parent="."]
 unique_name_in_owner = true
@@ -149,6 +153,7 @@ libraries = {
 }
 
 [connection signal="body_entered" from="fox/EnemyHit" to="." method="_on_enemy_hit_body_entered"]
+[connection signal="timeout" from="fox/EnemyHit/Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
 
 [editable path="fox"]

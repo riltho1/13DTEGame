@@ -28,6 +28,8 @@ var can_double_jump = false
 
 @onready var particle_trail = $ParticleTrail
 @onready var footsteps = $Footsteps
+@onready var enemy_hit: Area3D = $fox/EnemyHit
+@onready var collision_shape_3d: CollisionShape3D = $fox/EnemyHit/CollisionShape3D
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * 2
@@ -37,6 +39,9 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * 2
 func _process(delta):
 	player_animations()
 	get_input(delta)
+	print(collision_shape_3d.position)
+	print(enemy_hit.position)
+	print(position)
 	
 	# Smoothly follow player's position
 	spring_arm.position = lerp(spring_arm.position, position, delta * follow_lerp_factor)
@@ -101,6 +106,8 @@ func get_input(_delta):
 
 # Handle Player Animations
 func player_animations():
+	if animation.get_current_animation() == "Attack":
+		return
 	particle_trail.emitting = false
 	footsteps.stream_paused = true
 	
@@ -114,6 +121,8 @@ func player_animations():
 	
 	if Input.is_action_just_pressed("attack"):
 		animation.play("Attack")
+		await animation.animation_finished
+		animation.play("Idle")
 
 func _on_hit_box_body_entered(body):
 	if body.is_in_group("Enemy"):
@@ -124,3 +133,8 @@ func _on_enemy_hit_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Enemy"):
 		print("enemy hit")
 		body.take_damage()
+		
+
+
+func _on_timer_timeout() -> void:
+	pass # Replace with function body.

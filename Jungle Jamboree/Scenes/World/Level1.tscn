@@ -80,9 +80,6 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_6gg5q")
 
-[node name="Player" parent="." instance=ExtResource("8_2ho58")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0539517, 0.122547, -4.26149)
-
 [node name="Path" type="NavigationRegion3D" parent="."]
 transform = Transform3D(7.2, 0, 0, 0, 3, 0, 0, 0, 3, 0, -29.307, -60.591)
 navigation_mesh = SubResource("NavigationMesh_jeemf")
@@ -783,5 +780,8 @@ transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0.0
 
 [node name="Marker3D4" type="Marker3D" parent="EnemyMarkers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00233267, -49.4152)
+
+[node name="Player" parent="." instance=ExtResource("8_2ho58")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09911, 0.1, -4.0176)
 
 [connection signal="finished" from="Music - Level 1" to="Music - Level 1" method="_on_finished"]
