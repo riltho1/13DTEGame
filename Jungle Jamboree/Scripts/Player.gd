@@ -134,7 +134,10 @@ func _on_enemy_hit_body_entered(body: Node3D) -> void:
 		print("enemy hit")
 		body.take_damage()
 		
-
-
 func _on_timer_timeout() -> void:
 	pass # Replace with function body.
+
+
+func _on_fall_damage_body_entered(body: Node3D) -> void:
+	get_tree().reload_current_scene()
+	# Need death screen sorted

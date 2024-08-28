@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bmtfl31tew2lj" path="res://Scenes/LevelPieces/bigGrass.tscn" id="5_yhyu8"]
 [ext_resource type="PackedScene" uid="uid://jnp87k2tyyf1" path="res://Scenes/LevelPieces/Bridge.tscn" id="7_gkcvd"]
 [ext_resource type="PackedScene" uid="uid://cswvebpdwj03v" path="res://Scenes/World/Player.tscn" id="8_2ho58"]
-[ext_resource type="PackedScene" uid="uid://bwqkoqjn5odfc" path="res://Scenes/LevelPieces/Water.tscn" id="8_6cmq7"]
 [ext_resource type="PackedScene" uid="uid://cptq8q2kbt1tj" path="res://Scenes/World/Enemy.tscn" id="9_jxg12"]
 [ext_resource type="PackedScene" uid="uid://cfes2f8jcupm2" path="res://Scenes/LevelPieces/Dirt end.tscn" id="9_lgnq3"]
 [ext_resource type="PackedScene" uid="uid://cf166txy0mhiy" path="res://Scenes/LevelPieces/Log.tscn" id="10_524ot"]
@@ -70,6 +69,9 @@ size = Vector3(23.3041, 14.2991, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hbss8"]
 size = Vector3(1, 14.2612, 5.08069)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ew30j"]
+size = Vector3(2116.99, 1, 1158.69)
 
 [node name="Node3D" type="Node3D"]
 
@@ -182,9 +184,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -4.00001)
 
 [node name="ground_grass_37" parent="Foreground" instance=ExtResource("5_yhyu8")]
 transform = Transform3D(370, 0, 0, 0, 15, 0, 0, 0, 280, 3370.3, -10.7418, -3950.96)
-
-[node name="water_4" parent="Foreground" instance=ExtResource("8_6cmq7")]
-transform = Transform3D(60, 0, 0, 0, 1, 0, 0, 0, 60, 0, -13.2681, 0)
 
 [node name="ground_grass_20" parent="Foreground" instance=ExtResource("5_yhyu8")]
 transform = Transform3D(2.46667, 0, 0, 0, 1, 0, 0, 0, 1.12, -4.36833, -0.01966, -19.716)
@@ -782,6 +781,13 @@ transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00233267, -49.4152)
 
 [node name="Player" parent="." instance=ExtResource("8_2ho58")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09911, 0.1, -4.0176)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09911, 0.1, -59.4108)
+
+[node name="FallDamage" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.1588, -55.9056, 253.68)
+
+[node name="FallingDeath" type="CollisionShape3D" parent="FallDamage"]
+shape = SubResource("BoxShape3D_ew30j")
 
 [connection signal="finished" from="Music - Level 1" to="Music - Level 1" method="_on_finished"]
+[connection signal="body_entered" from="FallDamage" to="Player" method="_on_fall_damage_body_entered"]

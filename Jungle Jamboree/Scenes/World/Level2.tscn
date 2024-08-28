@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://by0y3wremyrs5"]
+[gd_scene load_steps=15 format=3 uid="uid://by0y3wremyrs5"]
 
 [ext_resource type="Texture2D" uid="uid://5rgigjgnkvh0" path="res://AllSkyFree/Cartoon Base NightSky Equirect.png" id="1_lqykr"]
 [ext_resource type="PackedScene" uid="uid://bmtfl31tew2lj" path="res://Scenes/LevelPieces/bigGrass.tscn" id="1_lx36o"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cf166txy0mhiy" path="res://Scenes/LevelPieces/Log.tscn" id="8_rvday"]
 [ext_resource type="PackedScene" uid="uid://bae4lx7lmt1mw" path="res://Scenes/LevelPieces/Rock1.tscn" id="9_udp42"]
 [ext_resource type="PackedScene" uid="uid://ymb1ypil6lip" path="res://Scenes/LevelPieces/Rock_2.tscn" id="10_gibm2"]
+[ext_resource type="PackedScene" uid="uid://cfes2f8jcupm2" path="res://Scenes/LevelPieces/Dirt end.tscn" id="11_uuj08"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2yr32"]
 panorama = ExtResource("1_lqykr")
@@ -324,3 +325,9 @@ transform = Transform3D(2.18386, 0, -2.05688, 0, 3, 0, 2.05688, 0, 2.18386, -1.7
 
 [node name="rock_6" parent="." instance=ExtResource("9_udp42")]
 transform = Transform3D(1.65227, 0, -2.504, 0, 3, 0, 2.504, 0, 1.65227, 1.60007, 11.6338, -139.254)
+
+[node name="trail_dirt_end_2" parent="." instance=ExtResource("11_uuj08")]
+transform = Transform3D(4.1775, 0, -2.74745, 0, 60, 0, 2.74745, 0, 4.1775, 5.64126, 11.9626, -147.614)
+
+[node name="ground_dirt_10" parent="." instance=ExtResource("5_ki3g6")]
+transform = Transform3D(0.785624, 0, -5.62242, 0, 1.5, 0, 0.53413, 0, 8.26973, 28.2311, 13.1365, -180.495)
