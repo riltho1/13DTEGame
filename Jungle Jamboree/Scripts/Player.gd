@@ -30,6 +30,7 @@ var can_double_jump = false
 @onready var footsteps = $Footsteps
 @onready var enemy_hit: Area3D = $fox/EnemyHit
 @onready var collision_shape_3d: CollisionShape3D = $fox/EnemyHit/CollisionShape3D
+@onready var ray_cast_3d: RayCast3D = $RayCast3D
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * 2
@@ -37,11 +38,12 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * 2
 # ---------- FUNCTIONS ---------- #
 
 func _process(delta):
+	ray_cast_3d.rotation.y = $Gimbal.rotation.y
 	player_animations()
 	get_input(delta)
-	print(collision_shape_3d.position)
-	print(enemy_hit.position)
-	print(position)
+	#print(collision_shape_3d.position)
+	#print(enemy_hit.position)
+	#print(position)
 	
 	# Smoothly follow player's position
 	spring_arm.position = lerp(spring_arm.position, position, delta * follow_lerp_factor)
@@ -121,6 +123,9 @@ func player_animations():
 	
 	if Input.is_action_just_pressed("attack"):
 		animation.play("Attack")
+		if ray_cast_3d.is_colliding():
+			ray_cast_3d.force_raycast_update()
+			ray_cast_3d.get_collider().take_damage()
 		await animation.animation_finished
 		animation.play("Idle")
 
