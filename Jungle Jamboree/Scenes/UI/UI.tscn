@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ljii1ynitxcv"]
+[gd_scene load_steps=6 format=3 uid="uid://ljii1ynitxcv"]
 
 [ext_resource type="Script" path="res://Scenes/UI/UI.gd" id="1_5t51d"]
 [ext_resource type="FontFile" uid="uid://ctb02tsn68oo8" path="res://Fonts/Retro Gaming.ttf" id="2_2rsd8"]
 [ext_resource type="Texture2D" uid="uid://dgrekarlo6qn3" path="res://2D Sprite/gold-coin.256x256.png" id="2_hthp4"]
+[ext_resource type="Texture2D" uid="uid://b0t35nqyhbtne" path="res://Assets/Textures/shield icon.png" id="3_awfxe"]
 [ext_resource type="Texture2D" uid="uid://bqxujo7b7krbv" path="res://2D Sprite/Tanuki Icon.png" id="3_q77s2"]
 
 [node name="UI" type="CanvasLayer"]
@@ -15,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
 layout_mode = 1
@@ -54,12 +56,17 @@ theme_override_fonts/font = ExtResource("2_2rsd8")
 text = "0"
 horizontal_alignment = 2
 
+[node name="ShieldIcon" type="Sprite2D" parent="Control/MarginContainer/VBoxContainer"]
+position = Vector2(1054, 63)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_awfxe")
+
 [node name="Gold-coin_256x256" type="Sprite2D" parent="."]
-position = Vector2(1086, 71)
-scale = Vector2(0.1, 0.1)
+position = Vector2(1086, 70)
+scale = Vector2(0.0890625, 0.0890625)
 texture = ExtResource("2_hthp4")
 
 [node name="TanukiIcon" type="Sprite2D" parent="."]
 position = Vector2(1088, 46)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.191797, 0.191797)
 texture = ExtResource("3_q77s2")
