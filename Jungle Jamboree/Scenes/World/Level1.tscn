@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://crubyayd5kug"]
+[gd_scene load_steps=36 format=3 uid="uid://crubyayd5kug"]
 
 [ext_resource type="Texture2D" uid="uid://cgh6uohgy2k67" path="res://AllSkyFree/AllSkyFree_Skyboxes/Sky_Day_BlueSky_Equirect.png" id="1_d66wy"]
 [ext_resource type="PackedScene" uid="uid://cjhhgr5lygos" path="res://Scenes/LevelPieces/Path.tscn" id="1_vfwc1"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cxx1mkp7rbla1" path="res://Scenes/LevelPieces/Bush.tscn" id="14_lqb0e"]
 [ext_resource type="AudioStream" uid="uid://ckobic77bjkwx" path="res://Music/Level 1 Music.mp3" id="16_cds4i"]
 [ext_resource type="PackedScene" uid="uid://ljii1ynitxcv" path="res://Scenes/UI/UI.tscn" id="16_tgdvm"]
+[ext_resource type="PackedScene" uid="uid://cshuyuy8ogcpy" path="res://Scenes/UI/pause_menu.tscn" id="17_t1tqj"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vxtyk"]
 panorama = ExtResource("1_d66wy")
@@ -824,6 +825,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.1588, -55.9056, 253.68)
 shape = SubResource("BoxShape3D_ew30j")
 
 [node name="UI" parent="." instance=ExtResource("16_tgdvm")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("17_t1tqj")]
 
 [connection signal="finished" from="Music - Level 1" to="Music - Level 1" method="_on_finished"]
 [connection signal="body_entered" from="FallDamage" to="Player" method="_on_fall_damage_body_entered"]
