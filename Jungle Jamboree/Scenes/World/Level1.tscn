@@ -837,6 +837,28 @@ transform = Transform3D(-0.999841, 0, 0.0178363, 0, 1, 0, -0.0178363, 0, -0.9998
 [node name="Marker3D14" type="Marker3D" parent="EnemyMarkers"]
 transform = Transform3D(-0.999841, 0, 0.0178363, 0, 1, 0, -0.0178363, 0, -0.999841, 40.0874, 0.00233267, -100.575)
 
+[node name="Enemy8" parent="EnemyMarkers" node_paths=PackedStringArray("point1", "point2") instance=ExtResource("9_jxg12")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 64.7588, 0.312918, -125.084)
+point1 = NodePath("../Marker3D11")
+point2 = NodePath("../Marker3D12")
+
+[node name="Marker3D15" type="Marker3D" parent="EnemyMarkers"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 74.9936, 0.002, -124.841)
+
+[node name="Marker3D16" type="Marker3D" parent="EnemyMarkers"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 56.2566, 0.00233267, -124.841)
+
+[node name="Enemy9" parent="EnemyMarkers" node_paths=PackedStringArray("point1", "point2") instance=ExtResource("9_jxg12")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 64.7588, 0.312918, -128.68)
+point1 = NodePath("../Marker3D11")
+point2 = NodePath("../Marker3D12")
+
+[node name="Marker3D17" type="Marker3D" parent="EnemyMarkers"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 74.9936, 0.002, -128.436)
+
+[node name="Marker3D18" type="Marker3D" parent="EnemyMarkers"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 56.2566, 0.00233267, -128.436)
+
 [node name="Player" parent="." instance=ExtResource("8_2ho58")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09911, 0.1, -3.29581)
 
