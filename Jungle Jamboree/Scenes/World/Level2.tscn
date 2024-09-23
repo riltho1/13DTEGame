@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://by0y3wremyrs5"]
+[gd_scene load_steps=18 format=3 uid="uid://by0y3wremyrs5"]
 
+[ext_resource type="Script" path="res://Scenes/World/level_2.gd" id="1_6hxuv"]
 [ext_resource type="Texture2D" uid="uid://5rgigjgnkvh0" path="res://AllSkyFree/Cartoon Base NightSky Equirect.png" id="1_lqykr"]
 [ext_resource type="PackedScene" uid="uid://bmtfl31tew2lj" path="res://Scenes/LevelPieces/bigGrass.tscn" id="1_lx36o"]
 [ext_resource type="PackedScene" uid="uid://cswvebpdwj03v" path="res://Scenes/World/Player.tscn" id="2_atcpf"]
@@ -17,16 +18,17 @@
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2yr32"]
 panorama = ExtResource("1_lqykr")
 
-[sub_resource type="Sky" id="Sky_stguc"]
+[sub_resource type="Sky" id="Sky_nbi8h"]
 sky_material = SubResource("PanoramaSkyMaterial_2yr32")
 
 [sub_resource type="Environment" id="Environment_vwyag"]
 background_mode = 2
-sky = SubResource("Sky_stguc")
+sky = SubResource("Sky_nbi8h")
 tonemap_mode = 2
 glow_enabled = true
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_6hxuv")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -625,5 +627,7 @@ transform = Transform3D(2.18386, 0, -2.05688, 0, 3, 0, 2.05688, 0, 2.18386, -1.7
 
 [node name="rock_6" parent="Platforms" instance=ExtResource("9_udp42")]
 transform = Transform3D(1.65227, 0, -2.504, 0, 3, 0, 2.504, 0, 1.65227, 1.60007, 11.6338, -139.254)
+
+[connection signal="body_entered" from="Cave/Shadow Area" to="." method="_on_shadow_area_body_entered"]
 
 [editable path="Cave"]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2ante6mkbrly"]
+
+[ext_resource type="Texture2D" uid="uid://5rgigjgnkvh0" path="res://AllSkyFree/Cartoon Base NightSky Equirect.png" id="1_8skx2"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qcagl"]
+panorama = ExtResource("1_8skx2")
+
+[sub_resource type="Sky" id="Sky_stguc"]
+sky_material = SubResource("PanoramaSkyMaterial_qcagl")
+
+[sub_resource type="Environment" id="Environment_hjssy"]
+background_mode = 2
+sky = SubResource("Sky_stguc")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Level3" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_hjssy")
