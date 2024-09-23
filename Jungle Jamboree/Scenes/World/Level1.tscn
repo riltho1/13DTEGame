@@ -1,5 +1,6 @@
-[gd_scene load_steps=36 format=3 uid="uid://crubyayd5kug"]
+[gd_scene load_steps=37 format=3 uid="uid://crubyayd5kug"]
 
+[ext_resource type="Script" path="res://Scenes/World/level_1.gd" id="1_cnlpn"]
 [ext_resource type="Texture2D" uid="uid://cgh6uohgy2k67" path="res://AllSkyFree/AllSkyFree_Skyboxes/Sky_Day_BlueSky_Equirect.png" id="1_d66wy"]
 [ext_resource type="PackedScene" uid="uid://cjhhgr5lygos" path="res://Scenes/LevelPieces/Path.tscn" id="1_vfwc1"]
 [ext_resource type="PackedScene" uid="uid://ofie44xd11l8" path="res://Scenes/LevelPieces/Path1.tscn" id="2_rjm43"]
@@ -76,6 +77,7 @@ size = Vector3(1, 14.2612, 5.08069)
 size = Vector3(2116.99, 1, 1158.69)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_cnlpn")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -872,5 +874,8 @@ shape = SubResource("BoxShape3D_ew30j")
 
 [node name="PauseMenu" parent="UI" instance=ExtResource("17_t1tqj")]
 
+[connection signal="body_entered" from="Cave/Shadow Area" to="." method="_on_shadow_area_body_entered"]
 [connection signal="finished" from="Music - Level 1" to="Music - Level 1" method="_on_finished"]
 [connection signal="body_entered" from="FallDamage" to="Player" method="_on_fall_damage_body_entered"]
+
+[editable path="Cave"]
