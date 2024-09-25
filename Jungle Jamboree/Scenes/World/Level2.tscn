@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://by0y3wremyrs5"]
+[gd_scene load_steps=24 format=3 uid="uid://by0y3wremyrs5"]
 
 [ext_resource type="Script" path="res://Scenes/World/level_2.gd" id="1_6hxuv"]
 [ext_resource type="Texture2D" uid="uid://5rgigjgnkvh0" path="res://AllSkyFree/Cartoon Base NightSky Equirect.png" id="1_lqykr"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cjmjroy1sxibg" path="res://Scenes/LevelPieces/Cave.tscn" id="11_3chon"]
 [ext_resource type="PackedScene" uid="uid://cfes2f8jcupm2" path="res://Scenes/LevelPieces/Dirt end.tscn" id="11_uuj08"]
 [ext_resource type="PackedScene" uid="uid://jnp87k2tyyf1" path="res://Scenes/LevelPieces/Bridge.tscn" id="12_avesr"]
+[ext_resource type="PackedScene" uid="uid://cptq8q2kbt1tj" path="res://Scenes/World/Enemy.tscn" id="15_6x10w"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2yr32"]
 panorama = ExtResource("1_lqykr")
@@ -27,6 +28,21 @@ sky = SubResource("Sky_nbi8h")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_qfr64"]
+size = Vector3(1, 33.788, 159.76)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s5ehg"]
+size = Vector3(0.685559, 48.369, 42.416)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t2tfo"]
+size = Vector3(1, 51.8121, 25.4068)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3w6kc"]
+size = Vector3(1, 57.4301, 90.9402)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e6lnp"]
+size = Vector3(16.5074, 33.8622, 1)
+
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_6hxuv")
 
@@ -38,7 +54,7 @@ shadow_enabled = true
 environment = SubResource("Environment_vwyag")
 
 [node name="Player" parent="." instance=ExtResource("2_atcpf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -117.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48, 0, 33.425)
 
 [node name="Ground" type="Node3D" parent="."]
 transform = Transform3D(5.49658, 2.00478, 0, -2.40574, 4.58048, 0, 0, 0, 20, -18.9071, 4.90669, 0)
@@ -627,6 +643,71 @@ transform = Transform3D(2.18386, 0, -2.05688, 0, 3, 0, 2.05688, 0, 2.18386, -1.7
 
 [node name="rock_6" parent="Platforms" instance=ExtResource("9_udp42")]
 transform = Transform3D(1.65227, 0, -2.504, 0, 3, 0, 2.504, 0, 1.65227, 1.60007, 11.6338, -139.254)
+
+[node name="Enemies" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.67795, 0, 0)
+
+[node name="Enemy" parent="Enemies" node_paths=PackedStringArray("point1", "point2") instance=ExtResource("15_6x10w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.437271, 14.2225)
+point1 = NodePath("../Marker3D")
+point2 = NodePath("../Marker3D2")
+
+[node name="Marker3D" type="Marker3D" parent="Enemies"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 26.236)
+
+[node name="Marker3D2" type="Marker3D" parent="Enemies"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.71246)
+
+[node name="Enemy2" parent="Enemies" node_paths=PackedStringArray("point1", "point2") instance=ExtResource("15_6x10w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.60004, 0.437271, 14.2225)
+point1 = NodePath("../Marker3D3")
+point2 = NodePath("../Marker3D4")
+
+[node name="Marker3D3" type="Marker3D" parent="Enemies"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.60004, 0, 26.236)
+
+[node name="Marker3D4" type="Marker3D" parent="Enemies"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.60004, 0, -2.71246)
+
+[node name="Invisible Walls" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Invisible Walls"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Invisible Walls/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.3064, 16.394, -40.0692)
+shape = SubResource("BoxShape3D_qfr64")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Invisible Walls/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.47658, 16.394, -40.0692)
+shape = SubResource("BoxShape3D_qfr64")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Invisible Walls/StaticBody3D"]
+transform = Transform3D(0.82466, 0, -0.565629, 0, 1, 0, 0.565629, 0, 0.82466, 12.1313, 38.8206, -164.001)
+shape = SubResource("BoxShape3D_s5ehg")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Invisible Walls/StaticBody3D"]
+transform = Transform3D(0.82466, 0, -0.565629, 0, 1, 0, 0.565629, 0, 0.82466, 18.6654, 38.8206, -159.895)
+shape = SubResource("BoxShape3D_s5ehg")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Invisible Walls/StaticBody3D"]
+transform = Transform3D(0.969424, 0, -0.245392, 0, 1, 0, 0.245392, 0, 0.969424, 27.2202, 37.3985, -193.606)
+shape = SubResource("BoxShape3D_t2tfo")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Invisible Walls/StaticBody3D"]
+transform = Transform3D(0.927517, 0, -0.373781, 0, 1, 0, 0.373781, 0, 0.927517, 36.1752, 37.3985, -189.342)
+shape = SubResource("BoxShape3D_t2tfo")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Invisible Walls/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.2242, 34.0939, -247.127)
+shape = SubResource("BoxShape3D_3w6kc")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="Invisible Walls/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.8538, 34.0939, -246.468)
+shape = SubResource("BoxShape3D_3w6kc")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="Invisible Walls/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.396652, 16.4311, 39.4392)
+shape = SubResource("BoxShape3D_e6lnp")
 
 [connection signal="body_entered" from="Cave/Shadow Area" to="." method="_on_shadow_area_body_entered"]
 

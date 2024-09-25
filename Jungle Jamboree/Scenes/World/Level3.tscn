@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2ante6mkbrly"]
+[gd_scene load_steps=7 format=3 uid="uid://c2ante6mkbrly"]
 
 [ext_resource type="Texture2D" uid="uid://5rgigjgnkvh0" path="res://AllSkyFree/Cartoon Base NightSky Equirect.png" id="1_8skx2"]
+[ext_resource type="PackedScene" uid="uid://cswvebpdwj03v" path="res://Scenes/World/Player.tscn" id="1_v6535"]
+[ext_resource type="PackedScene" uid="uid://csnkvlxwahub0" path="res://Scenes/LevelPieces/bigDirt.tscn" id="3_4nixu"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qcagl"]
 panorama = ExtResource("1_8skx2")
@@ -20,5 +22,12 @@ glow_enabled = true
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
+[node name="Player" parent="." instance=ExtResource("1_v6535")]
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hjssy")
+
+[node name="Ground" type="Node3D" parent="."]
+
+[node name="Ground Dirt" parent="." instance=ExtResource("3_4nixu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.254639, 0, -0.199817)
