@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://by0y3wremyrs5"]
+[gd_scene load_steps=26 format=3 uid="uid://by0y3wremyrs5"]
 
 [ext_resource type="Script" path="res://Scenes/World/level_2.gd" id="1_6hxuv"]
 [ext_resource type="Texture2D" uid="uid://5rgigjgnkvh0" path="res://AllSkyFree/Cartoon Base NightSky Equirect.png" id="1_lqykr"]
@@ -18,6 +18,7 @@
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2yr32"]
 panorama = ExtResource("1_lqykr")
+energy_multiplier = 4.0
 
 [sub_resource type="Sky" id="Sky_nbi8h"]
 sky_material = SubResource("PanoramaSkyMaterial_2yr32")
@@ -27,6 +28,10 @@ background_mode = 2
 sky = SubResource("Sky_nbi8h")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_qn8ef"]
+vertices = PackedVector3Array(6.49323, 3.05956, -19.8233, 6.49323, 3.05956, -19.0733, 11.7432, 5.80956, -19.0733, 11.7432, 5.80956, -19.8233, 7.74323, 6.30956, -14.3233, 7.74323, 6.30956, -13.8233, 8.24323, 6.55956, -13.8233, 8.24323, 6.55956, -14.3233, 7.74323, 6.30956, -11.8233, 7.74323, 6.30956, -10.0733, 8.24323, 6.55956, -10.3233, 2.49323, 0.809556, 1.4267, 4.24323, 1.55956, 1.4267, 3.99323, 1.55956, -5.5733, 2.49323, 0.809556, -5.5733)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(7, 6, 4), PackedInt32Array(4, 6, 5), PackedInt32Array(10, 9, 8), PackedInt32Array(14, 13, 11), PackedInt32Array(11, 13, 12)]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qfr64"]
 size = Vector3(1, 33.788, 159.76)
@@ -43,6 +48,9 @@ size = Vector3(1, 57.4301, 90.9402)
 [sub_resource type="BoxShape3D" id="BoxShape3D_e6lnp"]
 size = Vector3(16.5074, 33.8622, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_k4xg5"]
+size = Vector3(1, 29.6809, 31.603)
+
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_6hxuv")
 
@@ -53,50 +61,48 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vwyag")
 
-[node name="Player" parent="." instance=ExtResource("2_atcpf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48, 0, 33.425)
-
-[node name="Ground" type="Node3D" parent="."]
+[node name="Path" type="NavigationRegion3D" parent="."]
 transform = Transform3D(5.49658, 2.00478, 0, -2.40574, 4.58048, 0, 0, 0, 20, -18.9071, 4.90669, 0)
+navigation_mesh = SubResource("NavigationMesh_qn8ef")
 
-[node name="ground_dirt_9" parent="Ground" instance=ExtResource("5_ki3g6")]
-transform = Transform3D(0.305366, -0.33413, 0, 0.160383, 0.916098, 0, 0, 0, 0.5, 3.21469, 0.617186, -3.9976)
-
-[node name="ground_dirt_8" parent="Ground" instance=ExtResource("5_ki3g6")]
-transform = Transform3D(0.305366, -0.33413, 0, 0.160383, 0.916098, 0, 0, 0, 0.5, 3.21469, 0.617186, 0)
-
-[node name="trail_dirt_end_2" parent="Ground" instance=ExtResource("11_uuj08")]
-transform = Transform3D(0.701616, -4.00957, -0.419489, 0.3685, 10.9932, -0.220322, 0.15111, 0, 0.208875, 3.27541, 3.26073, -7.39397)
-
-[node name="ground_dirt_10" parent="Ground" instance=ExtResource("5_ki3g6")]
-transform = Transform3D(0.119951, -0.100239, -0.429224, 0.0630003, 0.274829, -0.225435, 0.0267065, 0, 0.206743, 4.90978, 4.37541, -8.2067)
-
-[node name="ground_dirt_11" parent="Ground" instance=ExtResource("5_ki3g6")]
-transform = Transform3D(0.145049, -0.100239, 0, 0.0761819, 0.274829, 0, 0, 0, 0.275, 7.90638, 5.94927, -11.3117)
-
-[node name="ground_dirt_12" parent="Ground" instance=ExtResource("5_ki3g6")]
-transform = Transform3D(0.132556, -0.100239, -0.111582, 0.0696205, 0.274829, -0.0586044, 0.0192851, 0, 0.0822484, 7.01312, 5.48012, -9.32359)
-
-[node name="ground_dirt_13" parent="Ground" instance=ExtResource("5_ki3g6")]
-transform = Transform3D(0.14163, -0.100239, -0.05932, 0.0743861, 0.27483, -0.0311558, 0.0102525, 0, 0.0878785, 7.66517, 5.82258, -9.90728)
-
-[node name="ground_dirt_14" parent="Ground" instance=ExtResource("5_ki3g6")]
-transform = Transform3D(0.152683, -0.0668261, 0, 0.0801915, 0.18322, 0, 0, 0, 0.2, 7.97831, 5.95287, -13.82)
-
-[node name="ground_dirt_15" parent="Ground" instance=ExtResource("5_ki3g6")]
-transform = Transform3D(0.152683, -0.0652228, -0.0582014, 0.0801915, 0.178824, 0.159573, 0, -0.0108867, 0.195202, 8.91821, 3.76868, -16.9378)
-
-[node name="ground_dirt_16" parent="Ground" instance=ExtResource("5_ki3g6")]
-transform = Transform3D(0.0170556, -0.0336705, 0, 0.0255897, 0.0423158, 0, 0, 0, 0.01375, 4.02429, 2.34123, -0.565585)
-
-[node name="bridge_1" parent="Ground" instance=ExtResource("12_avesr")]
+[node name="bridge_1" parent="Path" instance=ExtResource("12_avesr")]
 transform = Transform3D(0.0086495, -0.200478, 0.457967, 0.00454286, 0.549659, 0.240531, -0.149973, 0, 0.00283251, 8.02217, 5.98189, -12.7247)
 
-[node name="trail_dirt_end_3" parent="Ground" instance=ExtResource("11_uuj08")]
-transform = Transform3D(0.0824993, -1.34683, -0.0493255, 0.12378, 1.69264, -0.0740068, 0.0075555, 0, 0.0104437, 3.49688, 1.47728, -0.369698)
+[node name="Ground" type="Node3D" parent="Path"]
+transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="ground_dirt_17" parent="Ground" instance=ExtResource("5_ki3g6")]
+[node name="ground_dirt_9" parent="Path/Ground" instance=ExtResource("5_ki3g6")]
+transform = Transform3D(0.305366, -0.33413, 0, 0.160383, 0.916098, 0, 0, 0, 0.5, 3.21469, 0.617186, -3.9976)
+
+[node name="ground_dirt_8" parent="Path/Ground" instance=ExtResource("5_ki3g6")]
+transform = Transform3D(0.305366, -0.33413, 0, 0.160383, 0.916098, 0, 0, 0, 0.5, 3.21469, 0.617186, 0)
+
+[node name="trail_dirt_end_2" parent="Path/Ground" instance=ExtResource("11_uuj08")]
+transform = Transform3D(0.701616, -4.00957, -0.419489, 0.3685, 10.9932, -0.220322, 0.15111, 0, 0.208875, 3.27541, 3.26073, -7.39397)
+
+[node name="ground_dirt_10" parent="Path/Ground" instance=ExtResource("5_ki3g6")]
+transform = Transform3D(0.119951, -0.100239, -0.429224, 0.0630003, 0.274829, -0.225435, 0.0267065, 0, 0.206743, 4.90978, 4.37541, -8.2067)
+
+[node name="ground_dirt_11" parent="Path/Ground" instance=ExtResource("5_ki3g6")]
+transform = Transform3D(0.145049, -0.100239, 0, 0.0761819, 0.274829, 0, 0, 0, 0.275, 7.90638, 5.94927, -11.3117)
+
+[node name="ground_dirt_12" parent="Path/Ground" instance=ExtResource("5_ki3g6")]
+transform = Transform3D(0.132556, -0.100239, -0.111582, 0.0696205, 0.274829, -0.0586044, 0.0192851, 0, 0.0822484, 7.01312, 5.48012, -9.32359)
+
+[node name="ground_dirt_13" parent="Path/Ground" instance=ExtResource("5_ki3g6")]
+transform = Transform3D(0.14163, -0.100239, -0.05932, 0.0743861, 0.27483, -0.0311558, 0.0102525, 0, 0.0878785, 7.66517, 5.82258, -9.90728)
+
+[node name="ground_dirt_14" parent="Path/Ground" instance=ExtResource("5_ki3g6")]
+transform = Transform3D(0.152683, -0.0668261, 0, 0.0801915, 0.18322, 0, 0, 0, 0.2, 7.97831, 5.95287, -13.82)
+
+[node name="ground_dirt_15" parent="Path/Ground" instance=ExtResource("5_ki3g6")]
+transform = Transform3D(0.152683, -0.0652228, -0.0582014, 0.0801915, 0.178824, 0.159573, 0, -0.0108867, 0.195202, 8.91821, 3.76868, -16.9378)
+
+[node name="ground_dirt_17" parent="Path/Ground" instance=ExtResource("5_ki3g6")]
 transform = Transform3D(0.763415, -0.0668261, 0, 0.400957, 0.18322, 0, 0, 0, 0.2, 9.04809, 3.83689, -19.5193)
+
+[node name="Player" parent="." instance=ExtResource("2_atcpf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48, 0, 33.425)
 
 [node name="Trees" type="Node3D" parent="."]
 
@@ -648,15 +654,15 @@ transform = Transform3D(1.65227, 0, -2.504, 0, 3, 0, 2.504, 0, 1.65227, 1.60007,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.67795, 0, 0)
 
 [node name="Enemy" parent="Enemies" node_paths=PackedStringArray("point1", "point2") instance=ExtResource("15_6x10w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.437271, 14.2225)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.437271, 3.0685)
 point1 = NodePath("../Marker3D")
 point2 = NodePath("../Marker3D2")
 
 [node name="Marker3D" type="Marker3D" parent="Enemies"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 26.236)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0657923, 17.4738)
 
 [node name="Marker3D2" type="Marker3D" parent="Enemies"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.71246)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0657923, -11.4747)
 
 [node name="Enemy2" parent="Enemies" node_paths=PackedStringArray("point1", "point2") instance=ExtResource("15_6x10w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.60004, 0.437271, 14.2225)
@@ -664,10 +670,10 @@ point1 = NodePath("../Marker3D3")
 point2 = NodePath("../Marker3D4")
 
 [node name="Marker3D3" type="Marker3D" parent="Enemies"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.60004, 0, 26.236)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.60004, 0.127473, 26.236)
 
 [node name="Marker3D4" type="Marker3D" parent="Enemies"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.60004, 0, -2.71246)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.60004, 0.127473, -2.71246)
 
 [node name="Invisible Walls" type="Node3D" parent="."]
 
@@ -708,6 +714,14 @@ shape = SubResource("BoxShape3D_3w6kc")
 [node name="CollisionShape3D9" type="CollisionShape3D" parent="Invisible Walls/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.396652, 16.4311, 39.4392)
 shape = SubResource("BoxShape3D_e6lnp")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="Invisible Walls/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.965591, 0.260066, 0, -0.260066, 0.965591, 33.5698, 13.3801, -341.368)
+shape = SubResource("BoxShape3D_k4xg5")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="Invisible Walls/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.965591, 0.260066, 0, -0.260066, 0.965591, 42.1009, 13.1569, -342.197)
+shape = SubResource("BoxShape3D_k4xg5")
 
 [connection signal="body_entered" from="Cave/Shadow Area" to="." method="_on_shadow_area_body_entered"]
 
