@@ -22,8 +22,10 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 # Handling Camera Movement
-func _unhandled_input(event):
+		
+func _input(event):
 	if event is InputEventMouseMotion:
+		print("mouse move")
 		rotation_degrees.x -= event.relative.y * mouse_sensitivity
 		rotation_degrees.x = clamp(rotation_degrees.x, -60, -0)
 		

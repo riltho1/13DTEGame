@@ -873,6 +873,8 @@ shape = SubResource("BoxShape3D_ew30j")
 [node name="UI" parent="." instance=ExtResource("16_tgdvm")]
 
 [node name="PauseMenu" parent="UI" instance=ExtResource("17_t1tqj")]
+visible = false
+mouse_filter = 2
 
 [connection signal="body_entered" from="Cave/Shadow Area" to="." method="_on_shadow_area_body_entered"]
 [connection signal="finished" from="Music - Level 1" to="Music - Level 1" method="_on_finished"]

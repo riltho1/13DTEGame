@@ -4,10 +4,14 @@ func _ready():
 	$AnimationPlayer.play("RESET")
 
 func resueme():
-	get_tree().paused = false
+	
 	$AnimationPlayer.play_backwards('blur')
+	await $AnimationPlayer.animation_finished
+	hide()
+	get_tree().paused = false
 
 func pause():
+	show()
 	get_tree().paused = true
 	$AnimationPlayer.play('blur')
 
