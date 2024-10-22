@@ -27,8 +27,10 @@ func _on_resume_pressed() -> void:
 
 
 func _on_restart_pressed() -> void:
-	resueme()
+	get_tree().paused = false
 	get_tree().reload_current_scene()
+	
+	print('reset')
 
 
 func _on_quit_pressed() -> void:

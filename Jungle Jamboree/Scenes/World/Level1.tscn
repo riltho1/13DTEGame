@@ -872,6 +872,21 @@ shape = SubResource("BoxShape3D_ew30j")
 
 [node name="UI" parent="." instance=ExtResource("16_tgdvm")]
 
+[node name="Control" parent="UI" index="0"]
+visible = false
+
+[node name="MarginContainer" parent="UI/Control" index="0"]
+visible = false
+
+[node name="VBoxContainer" parent="UI/Control/MarginContainer" index="0"]
+visible = false
+
+[node name="Gold-coin_256x256" parent="UI" index="1"]
+visible = false
+
+[node name="TanukiIcon" parent="UI" index="2"]
+visible = false
+
 [node name="PauseMenu" parent="UI" instance=ExtResource("17_t1tqj")]
 visible = false
 mouse_filter = 2
@@ -881,3 +896,4 @@ mouse_filter = 2
 [connection signal="body_entered" from="FallDamage" to="Player" method="_on_fall_damage_body_entered"]
 
 [editable path="Cave"]
+[editable path="UI"]
