@@ -15,3 +15,7 @@ func _process(delta: float) -> void:
 func _on_shadow_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player"):
 		get_tree().change_scene_to_file("res://Scenes/World/Level2.tscn")
+
+
+func _on_fall_damage_body_entered(body):
+	get_tree().reload_current_scene()

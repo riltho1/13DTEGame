@@ -1,12 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2hy02cnm6ney"]
+[gd_scene load_steps=6 format=3 uid="uid://b2hy02cnm6ney"]
 
 [ext_resource type="Script" path="res://Scenes/UI/Main menu.gd" id="1_gglwn"]
 [ext_resource type="Texture2D" uid="uid://btv6h62luyj5f" path="res://Assets/Resources/Jungle Jamboree.png" id="1_n8s6x"]
 [ext_resource type="FontFile" uid="uid://ctb02tsn68oo8" path="res://Fonts/Retro Gaming.ttf" id="3_aksf2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wp1c5"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m88da"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_inf4k"]
 
@@ -71,17 +69,6 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_wp1c5")
 text = "    Play"
 flat = true
 
-[node name="Settings" type="Button" parent="HBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-theme_override_colors/font_hover_color = Color(0.196078, 0.623529, 0.670588, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_aksf2")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_m88da")
-text = "    Settings"
-flat = true
-
 [node name="Quit" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
@@ -98,3 +85,4 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

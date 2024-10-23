@@ -841,8 +841,8 @@ transform = Transform3D(-0.999841, 0, 0.0178363, 0, 1, 0, -0.0178363, 0, -0.9998
 
 [node name="Enemy8" parent="EnemyMarkers" node_paths=PackedStringArray("point1", "point2") instance=ExtResource("9_jxg12")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 64.7588, 0.312918, -125.084)
-point1 = NodePath("../Marker3D11")
-point2 = NodePath("../Marker3D12")
+point1 = NodePath("../Marker3D15")
+point2 = NodePath("../Marker3D16")
 
 [node name="Marker3D15" type="Marker3D" parent="EnemyMarkers"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 74.9936, 0.002, -124.841)
@@ -852,8 +852,8 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 56.256
 
 [node name="Enemy9" parent="EnemyMarkers" node_paths=PackedStringArray("point1", "point2") instance=ExtResource("9_jxg12")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 64.7588, 0.312918, -128.68)
-point1 = NodePath("../Marker3D11")
-point2 = NodePath("../Marker3D12")
+point1 = NodePath("../Marker3D17")
+point2 = NodePath("../Marker3D18")
 
 [node name="Marker3D17" type="Marker3D" parent="EnemyMarkers"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 74.9936, 0.002, -128.436)
@@ -893,7 +893,7 @@ mouse_filter = 2
 
 [connection signal="body_entered" from="Cave/Shadow Area" to="." method="_on_shadow_area_body_entered"]
 [connection signal="finished" from="Music - Level 1" to="Music - Level 1" method="_on_finished"]
-[connection signal="body_entered" from="FallDamage" to="Player" method="_on_fall_damage_body_entered"]
+[connection signal="body_entered" from="FallDamage" to="." method="_on_fall_damage_body_entered"]
 
 [editable path="Cave"]
 [editable path="UI"]

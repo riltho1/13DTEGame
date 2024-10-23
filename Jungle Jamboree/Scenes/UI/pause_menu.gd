@@ -4,7 +4,6 @@ func _ready():
 	$AnimationPlayer.play("RESET")
 
 func resueme():
-	
 	$AnimationPlayer.play_backwards('blur')
 	await $AnimationPlayer.animation_finished
 	hide()

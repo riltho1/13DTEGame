@@ -143,6 +143,4 @@ func _on_timer_timeout() -> void:
 	pass # Replace with function body.
 
 
-func _on_fall_damage_body_entered(body: Node3D) -> void:
-	get_tree().reload_current_scene()
 	# Need death screen sorted
