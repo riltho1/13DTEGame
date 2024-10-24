@@ -56,7 +56,7 @@ shadow_enabled = true
 environment = SubResource("Environment_vwyag")
 
 [node name="Player" parent="." instance=ExtResource("2_atcpf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48, 0, 17.2407)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.601442, 0.573256, 14.8027)
 
 [node name="Ground" type="Node3D" parent="."]
 transform = Transform3D(5.49658, 2.00478, 0, -2.40574, 4.58048, 0, 0, 0, 20, -18.9071, 4.90669, 0)
